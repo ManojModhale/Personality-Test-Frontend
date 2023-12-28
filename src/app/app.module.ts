@@ -8,7 +8,8 @@ import { LoginComponent } from './LoginPage/login.component';
 import { RegisterComponent } from './RegistrationPage/register.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ChangePasswordComponent } from './ForgotPassword/change-password.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CarouselComponent } from './carousel/carousel.component';
+import { NgbCarouselModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -18,6 +19,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     LoginComponent,
     RegisterComponent,
     ChangePasswordComponent,
+    CarouselComponent
     
   ],
   imports: [
