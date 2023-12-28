@@ -4,25 +4,26 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { WelcomeComponent } from './WelcomePage/welcome.component';
-<<<<<<< HEAD
 import { LoginComponent } from './LoginPage/login.component';
-=======
 import { RegisterComponent } from './RegistrationPage/register.component';
->>>>>>> 9652be3a5afa43bf90bd3d112538a9dc4db4f659
+import { ChangePasswordComponent } from './ForgotPassword/change-password.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     WelcomeComponent,
-<<<<<<< HEAD
-    LoginComponent
-=======
-    RegisterComponent
->>>>>>> 9652be3a5afa43bf90bd3d112538a9dc4db4f659
+    LoginComponent,
+    RegisterComponent,
+    ChangePasswordComponent,
+    
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
