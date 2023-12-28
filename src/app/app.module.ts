@@ -6,10 +6,10 @@ import { AppComponent } from './app.component';
 import { WelcomeComponent } from './WelcomePage/welcome.component';
 import { LoginComponent } from './LoginPage/login.component';
 import { RegisterComponent } from './RegistrationPage/register.component';
-import { ChangePasswordComponent } from './ForgotPassword/change-password.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { NgbCarouselModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ChangePasswordComponent } from './ForgotPassword/change-password.component';
 import { CarouselComponent } from './carousel/carousel.component';
+import { NgbCarouselModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -19,7 +19,7 @@ import { CarouselComponent } from './carousel/carousel.component';
     LoginComponent,
     RegisterComponent,
     ChangePasswordComponent,
-    CarouselComponent,
+    CarouselComponent
     
   ],
   imports: [

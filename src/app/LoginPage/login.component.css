@@ -98,3 +98,15 @@ body {
         width: 50%;
     }
 }
+
+.has-danger{
+    color: red;
+    font-size: 15px;
+    font-family: system-ui;
+}
+
+.has-success{
+    color: green;
+    font-size: 15px;
+    font-family: system-ui;
+}
