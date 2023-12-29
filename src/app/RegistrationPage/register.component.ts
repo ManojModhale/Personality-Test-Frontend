@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -12,7 +13,7 @@ export class RegisterComponent {
 
   isSubmited:boolean=false;
 
-  constructor(private http: HttpClient) { 
+  constructor(private http: HttpClient,private router: Router) { 
 
   }
 
@@ -117,7 +118,7 @@ export class RegisterComponent {
         (response: any) => {
           // Handle success response
           alert("Registered successfully!");
-          console.log(response);
+          this.router.navigate(['/login']);
         },
         (error: any) => {
           // Handle error response

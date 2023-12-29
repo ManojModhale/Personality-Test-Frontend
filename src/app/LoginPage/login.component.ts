@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -11,7 +12,7 @@ export class LoginComponent {
 
   private baseUrl:any = 'http://localhost:8182/user'; 
 
-  constructor(private http: HttpClient) { 
+  constructor(private http: HttpClient,private router: Router) { 
 
   }
 
@@ -48,6 +49,7 @@ export class LoginComponent {
             {
               alert("Login Successfully")
               console.log('Login successful', response);
+              this.router.navigate(['/home']);
             }
             else{
               alert("Wrong Credentials")
