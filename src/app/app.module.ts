@@ -11,6 +11,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgbCarouselModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ProfileComponent } from './ProfilePage/profile.component';
 import { EditcompComponent } from './EditProfile/editcomp/editcomp.component';
+import { HomeComponent } from './HomePage/home.component';
+import { TestComponent } from './Testing/test.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ChangePasswordComponent } from './ForgotPassword/change-password.component';
+import { TimerComponent } from './Timer/timer/timer.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +25,13 @@ import { EditcompComponent } from './EditProfile/editcomp/editcomp.component';
     RegisterComponent,
     CarouselComponent,
     ProfileComponent,
-    EditcompComponent
+    EditcompComponent,
+    ChangePasswordComponent,
+    CarouselComponent,
+    HomeComponent,
+    TestComponent,
+    TimerComponent
+   
   ],
   imports: [
     BrowserModule,
@@ -28,7 +39,8 @@ import { EditcompComponent } from './EditProfile/editcomp/editcomp.component';
     FormsModule,
     ReactiveFormsModule,
     NgbModule,
-    NgbCarouselModule
+    NgbCarouselModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

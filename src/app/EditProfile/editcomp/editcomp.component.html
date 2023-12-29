@@ -3,7 +3,7 @@
     <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
         <div class="card h-100 custom-card">
             <div class="card-body">
-                <form>
+                <form (ngSubmit)="updateProf()" [formGroup]="updateprof">
                 <!-- Form content -->
                 <div class="row gutters">
                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
@@ -11,29 +11,51 @@
                     </div>
 
                     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                        <div class="form-group">
+                        <div class="form-group" [ngClass]="{ 'has-danger': firstname.invalid && (firstname.dirty || firstname.touched),
+                        'has-success': firstname.valid && (firstname.dirty || firstname.touched)  }">
                             <label for="firstname">First Name:</label>
-                            <input type="text" class="form-control" id="firstname" placeholder="Enter First Name" value="{{firstname}}">
+                            <input type="text" class="form-control"  formControlName="firstname" id="firstname" placeholder="Enter First Name">
+                        <div class="form-control-feedback" [ngClass]="'has-danger'" *ngIf="firstname.errors && (firstname.dirty || firstname.touched)">
+                                <p *ngIf="firstname.errors.required">Firstname is required</p>
+                                <p *ngIf="firstname.errors?.pattern">Firstname Must be Capitalize without Space</p>
+                        </div>
                         </div>
                     </div>
                     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                        <div class="form-group">
+                        <div class="form-group" [ngClass]="{ 'has-danger': lastname.invalid && (lastname.dirty || lastname.touched),
+                            'has-success': lastname.valid && (lastname.dirty || lastname.touched)  }">
                             <label for="lastname">Last Name:</label>
-                            <input type="text" class="form-control" id="lastname" placeholder="Enter Last Name" value="{{lastname}}">
+                            <input type="text" class="form-control" formControlName="lastname"  id="lastname" placeholder="Enter Last Name">
+                        <div class="form-control-feedback" [ngClass]="'has-danger'" *ngIf="lastname.errors && (lastname.dirty || lastname.touched)">
+                                <p *ngIf="lastname.errors.required">Lastname is required</p>
+                                <p *ngIf="lastname.errors?.pattern">Lastname Must be Capitalize without Space</p>
+                            </div>
                         </div>
                     </div>
 
                     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                        <div class="form-group">
+                        <div class="form-group" [ngClass]="{ 'has-danger': email.invalid && (email.dirty || email.touched),
+                        'has-success': email.valid && (email.dirty || email.touched)  }">  
                             <label for="Email">Email:</label>
-                            <input type="email" class="form-control" id="Email" placeholder="Enter Valid email address " value="{{email}}">
+                            <input type="email" class="form-control" id="Email"  formControlName="email" placeholder="Enter Valid email address ">
+                        <div class="form-control-feedback" *ngIf="email.errors && (email.dirty || email.touched)">
+                                <p *ngIf="email.errors?.required">Email is required</p>
+                                
+                                <p *ngIf="email.errors?.email">Please enter a valid Email address</p>
+                        </div>
                         </div>
                     </div>
     
                     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                        <div class="form-group">
+                        <div class="form-group" [ngClass]="{ 'has-danger': mobileno.invalid && (mobileno.dirty || mobileno.touched),
+                            'has-success': mobileno.valid && (mobileno.dirty || mobileno.touched)  }">
                             <label for="website">Contact Number</label>
-                            <input type="url" class="form-control" id="website" placeholder="Coontact Number" value="{{mobileno}}">
+                            <input type="url" class="form-control" formControlName="mobileno"  id="website" placeholder="Coontact Number">
+                        <div class="form-control-feedback" *ngIf="mobileno.errors && (mobileno.dirty || mobileno.touched)">
+                                <p *ngIf="mobileno.errors?.required">Mobile Number is required</p>
+                                
+                                <p *ngIf="mobileno.errors?.pattern">Please enter a valid 10-digit Mobile Number</p>
+                        </div>
                         </div>
                     </div>
                 </div>
@@ -41,14 +63,19 @@
                 <div class="row gutters">
                     
                     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                        <div class="form-group">
+                        <div class="form-group" [ngClass]="{ 'has-danger': qualification.invalid && (qualification.dirty || qualification.touched),
+                            'has-success': qualification.valid && (qualification.dirty || qualification.touched)  }">
                             <label for="qualification">Qualification</label>
-                            <input type="text" class="form-control" id="qualification" placeholder="Qualification">
+                            <input type="text" class="form-control" formControlName="qualification" id="qualification" placeholder="Qualification">
+                        <div class="form-control-feedback" [ngClass]="'has-danger'" *ngIf="qualification.errors && (qualification.dirty || qualification.touched)">
+                                <p *ngIf="qualification.errors.required">Qualification is required</p>
+                        </div>
                         </div>
                     </div>
     
                     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                        <div class="form-group">
+                        <div class="form-group" [ngClass]="{ 'has-danger': designation.invalid && (designation.dirty || designation.touched),
+                            'has-success': designation.valid && (designation.dirty || designation.touched)  }">
                             <label for="designation">Designation</label>
                             <select class="form-select form-select-lg" id="designation" formControlName="designation">
                                 <option value="" disabled>Select</option>
@@ -56,6 +83,9 @@
                                 <option value="Employee">Employee</option>
                                 <option value="Teacher">Teacher</option>
                             </select>
+                        <div class="form-control-feedback" *ngIf="designation.errors && (designation.dirty || designation.touched)">
+                                <p *ngIf="designation.errors.required">Designation is required</p>
+                        </div>
                         </div>
                     </div>
                  </div>
