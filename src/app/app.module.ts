@@ -12,6 +12,8 @@ import { CarouselComponent } from './carousel/carousel.component';
 import { NgbCarouselModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HomeComponent } from './HomePage/home.component';
 import { TestComponent } from './Testing/test.component';
+import { HttpClientModule } from '@angular/common/http';
+
 
 
 @NgModule({
@@ -32,7 +34,8 @@ import { TestComponent } from './Testing/test.component';
     FormsModule,
     ReactiveFormsModule,
     NgbModule,
-    NgbCarouselModule
+    NgbCarouselModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

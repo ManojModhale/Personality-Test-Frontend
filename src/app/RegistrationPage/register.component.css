@@ -51,3 +51,15 @@ body {
         padding: 10px;
     }
 }
+
+.has-danger{
+    color: red;
+    font-size: 16px;
+    font-family: system-ui;
+}
+
+.has-success{
+    color: green;
+    font-size: 17px;
+    font-family: system-ui;
+}

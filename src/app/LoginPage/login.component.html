@@ -1,11 +1,15 @@
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<!-- Font Awesome CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+
 <div class="login-container">
 
     <h2>Login</h2>
 
     <form id="loginForm" (ngSubmit)="onLogin()" [formGroup]="loginForm">
 
-        <div class="form-group" [ngClass]="{ 'has-danger': username.invalid && (username.dirty || username.touched),
-            'has-success': username.valid && (username.dirty || username.touched)  }">
+        <div class="form-group" [ngClass]="{ 'has-danger': username.invalid && (username.dirty || username.touched) }">
             <div class="input-group">
                 <div class="input-group-prepend">
                     <span class="input-group-text fa-icon"><i class="fas fa-user"></i></span>
@@ -15,11 +19,11 @@
             </div>
             <div class="form-control-feedback" *ngIf="username.errors && (username.dirty || username.touched)">
                 <p *ngIf="username.errors.required">Username is required</p>
+                <p *ngIf="username.errors?.pattern">Username is Must be without Space</p>
             </div>
         </div>
 
-        <div class="form-group" [ngClass]="{'has-danger': password.invalid && (password.dirty || password.touched),
-            'has-success': password.valid && (password.dirty || password.touched) }">
+        <div class="form-group" [ngClass]="{'has-danger': password.invalid && (password.dirty || password.touched)}">
 
             <div class="input-group">
                 <div class="input-group-prepend">
@@ -41,7 +45,7 @@
             </div>
         </div>
 
-        <button type="submit" class="btn btn-primary">Login</button>
+        <button type="submit" [disabled]="!loginForm.valid" class="btn btn-primary">Login</button>
 
     </form>
 
@@ -50,3 +54,8 @@
     <a href="#" class="new-user" id="newUser">New User? Register Here</a>
 
 </div>
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
