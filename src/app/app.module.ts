@@ -13,6 +13,7 @@ import { NgbCarouselModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HomeComponent } from './HomePage/home.component';
 import { TestComponent } from './Testing/test.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ExamComponent } from './ExamPage/exam.component';
 
 
 
@@ -25,7 +26,8 @@ import { HttpClientModule } from '@angular/common/http';
     ChangePasswordComponent,
     CarouselComponent,
     HomeComponent,
-    TestComponent
+    TestComponent,
+    ExamComponent
     
   ],
   imports: [
