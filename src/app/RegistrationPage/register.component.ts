@@ -7,6 +7,7 @@ import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/fo
   templateUrl: './register.component.html',
   styleUrl: './register.component.css'
 })
+
 export class RegisterComponent {
   private baseUrl:any = 'http://localhost:8182/user'; 
 
@@ -130,4 +131,13 @@ export class RegisterComponent {
     
   }
 
+  
+  
 }
+  
+
+
+
+
+
+
