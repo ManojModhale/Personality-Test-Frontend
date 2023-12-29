@@ -1,19 +1,31 @@
 body {
     font-family: Arial, sans-serif;
     background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
   }
 
   #main-container {
-    max-width: 600px;
-    margin: 50px auto;
     background-color: #ffffff;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 50px auto;
+    max-width: 80%;
+    width: 600px; /* Increased width */
   }
 
   #instruction {
     margin-bottom: 20px;
+  }
+
+  #additional-instructions {
+    background-color: #f0f8ff;
+    padding: 20px; /* Increased padding */
+    border-radius: 10px;
+    margin-top: 20px;
+    text-align: justify; /* Justify text */
   }
 
   #start-btn {

@@ -1,0 +1,25 @@
+
+
+
+.card {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 150px; /* Adjust width as needed */
+}
+
+.display-1 {
+  font-size: 2rem; /* Adjust font size */
+  padding: 15px; /* Add padding */
+  background-color: #f8f9fa; /* Background color */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow effect */
+}
+
+.display-1 span {
+  font-weight: bold; /* Make numbers bold */
+  font-size: 1.5rem; /* Adjust font size for numbers */
+}
+
+.text-danger {
+  color: red;
+}
