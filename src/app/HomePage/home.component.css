@@ -1,0 +1,71 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header a {
+    color: white;
+    text-decoration: none;
+}
+
+header a:hover {
+    text-decoration: underline;
+}
+
+main {
+    padding: 20px;
+    text-align: center;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Style for user icon */
+.user-icon {
+    color: white; /* Set the color to white */
+    cursor: pointer;
+}
+
+/* Style for profile dropdown links */
+.dropdown-menu a {
+    color: black; /* Set the color to black or your preferred color */
+    text-align: right;
+}
+
+.dropdown-menu a:hover {
+    background-color: #555;
+    color: white; /* Change text color on hover */
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .center-links {
+        margin-top: 10px;
+    }
+
+    .mx-auto {
+        margin-top: 10px;
+    }
+}

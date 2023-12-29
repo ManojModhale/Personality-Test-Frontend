@@ -10,6 +10,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ChangePasswordComponent } from './ForgotPassword/change-password.component';
 import { CarouselComponent } from './carousel/carousel.component';
 import { NgbCarouselModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { HomeComponent } from './HomePage/home.component';
+import { TestComponent } from './Testing/test.component';
 
 
 @NgModule({
@@ -19,7 +21,9 @@ import { NgbCarouselModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
     LoginComponent,
     RegisterComponent,
     ChangePasswordComponent,
-    CarouselComponent
+    CarouselComponent,
+    HomeComponent,
+    TestComponent
     
   ],
   imports: [
