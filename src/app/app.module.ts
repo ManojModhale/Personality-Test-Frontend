@@ -9,6 +9,8 @@ import { RegisterComponent } from './RegistrationPage/register.component';
 import { CarouselComponent } from './carousel/carousel.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgbCarouselModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ProfileComponent } from './ProfilePage/profile.component';
+import { EditcompComponent } from './EditProfile/editcomp/editcomp.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { NgbCarouselModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
     WelcomeComponent,
     LoginComponent,
     RegisterComponent,
-    CarouselComponent
+    CarouselComponent,
+    ProfileComponent,
+    EditcompComponent
   ],
   imports: [
     BrowserModule,

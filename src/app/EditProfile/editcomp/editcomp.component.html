@@ -1,0 +1,70 @@
+<link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css'>
+ <div class="container">
+    <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
+        <div class="card h-100 custom-card">
+            <div class="card-body">
+                <form>
+                <!-- Form content -->
+                <div class="row gutters">
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                        <h6 class="mb-2 text-primary">Personal Details</h6>
+                    </div>
+
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                        <div class="form-group">
+                            <label for="firstname">First Name:</label>
+                            <input type="text" class="form-control" id="firstname" placeholder="Enter First Name" value="{{firstname}}">
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                        <div class="form-group">
+                            <label for="lastname">Last Name:</label>
+                            <input type="text" class="form-control" id="lastname" placeholder="Enter Last Name" value="{{lastname}}">
+                        </div>
+                    </div>
+
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                        <div class="form-group">
+                            <label for="Email">Email:</label>
+                            <input type="email" class="form-control" id="Email" placeholder="Enter Valid email address " value="{{email}}">
+                        </div>
+                    </div>
+    
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                        <div class="form-group">
+                            <label for="website">Contact Number</label>
+                            <input type="url" class="form-control" id="website" placeholder="Coontact Number" value="{{mobileno}}">
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="row gutters">
+                    
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                        <div class="form-group">
+                            <label for="qualification">Qualification</label>
+                            <input type="text" class="form-control" id="qualification" placeholder="Qualification">
+                        </div>
+                    </div>
+    
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                        <div class="form-group">
+                            <label for="designation">Designation</label>
+                            <select class="form-select form-select-lg" id="designation" formControlName="designation">
+                                <option value="" disabled>Select</option>
+                                <option value="Student">Student</option>
+                                <option value="Employee">Employee</option>
+                                <option value="Teacher">Teacher</option>
+                            </select>
+                        </div>
+                    </div>
+                 </div>
+                 <div class="button-spacing">
+                    <button type="button" id="cancel" name="cancel" class="btn btn-secondary">Cancel</button>
+                    <button type="button" id="update" name="update" class="btn btn-primary">Update</button>
+                </div>
+            </form>
+            </div>
+        </div>
+    </div>
+<script src='https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.bundle.min.js'></script>~
