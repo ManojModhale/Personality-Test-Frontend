@@ -17,7 +17,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { ExamComponent } from './ExamPage/exam.component';
 import { ChangePasswordComponent } from './ForgotPassword/change-password.component';
 import { TimerComponent } from './Timer/timer/timer.component';
-
+import { QuestionComponent } from './QuestionPage/question.component';
+import { TestFComponent } from './TestingF/test-f.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatFormFieldModule, MatLabel} from '@angular/material/form-field';
+import {MatIconModule} from '@angular/material/icon';
+import {MatInputModule} from '@angular/material/input';
 
 @NgModule({
   declarations: [
@@ -33,6 +38,9 @@ import { TimerComponent } from './Timer/timer/timer.component';
     HomeComponent,
     TestComponent,
     ExamComponent,
+    TimerComponent,
+    QuestionComponent,
+    TestFComponent,
     TimerComponent
   ],
   imports: [
@@ -42,7 +50,12 @@ import { TimerComponent } from './Timer/timer/timer.component';
     ReactiveFormsModule,
     NgbModule,
     NgbCarouselModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatFormFieldModule,
+    MatIconModule,
+    MatInputModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

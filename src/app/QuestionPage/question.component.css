@@ -1,0 +1,43 @@
+body {
+    background-color: #f8f9fa;
+  }
+
+  .container {
+    margin-top: 50px;
+  }
+
+  .question-container {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative; /* Added position relative */
+  }
+
+  .options-container {
+    margin-top: 20px;
+  }
+
+  .option-label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+
+  .next-button {
+    position: absolute;
+    bottom: 20px; /* Adjusted bottom spacing */
+    right: 20px; /* Adjusted right spacing */
+  }
+
+  @media (max-width: 576px) {
+    /* Small screen adjustments */
+    .options-container {
+      margin-bottom: 50px; /* Add space for the button */
+    }
+
+    .next-button {
+      position: static; /* Change to static position on small screens */
+      margin-top: 20px; /* Adjust top margin for spacing */
+    }
+  }

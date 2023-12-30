@@ -5,14 +5,16 @@
   position: absolute;
   top: 20px;
   right: 20px;
-  width: 150px; /* Adjust width as needed */
+  width: 120px; /* Adjust width as needed */
 }
 
 .display-1 {
   font-size: 2rem; /* Adjust font size */
   padding: 15px; /* Add padding */
-  background-color: #f8f9fa; /* Background color */
+  background-color: rgb(249, 250, 251); /* Background color */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow effect */
+  border: none; /* Remove border */
+  
 }
 
 .display-1 span {
