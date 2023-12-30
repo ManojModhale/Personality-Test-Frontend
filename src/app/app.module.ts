@@ -14,9 +14,9 @@ import { EditcompComponent } from './EditProfile/editcomp/editcomp.component';
 import { HomeComponent } from './HomePage/home.component';
 import { TestComponent } from './Testing/test.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ExamComponent } from './ExamPage/exam.component';
 import { ChangePasswordComponent } from './ForgotPassword/change-password.component';
 import { TimerComponent } from './Timer/timer/timer.component';
-import { DashboardComponent } from './DasboardPage/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -31,8 +31,7 @@ import { DashboardComponent } from './DasboardPage/dashboard.component';
     CarouselComponent,
     HomeComponent,
     TestComponent,
-    TimerComponent,
-    DashboardComponent
+    TimerComponent
    
   ],
   imports: [
