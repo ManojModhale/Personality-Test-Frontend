@@ -1,0 +1,60 @@
+ .card {
+    border-radius: 10px;
+    
+  }
+  
+  .shadow {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  }
+  
+  .characteristic {
+    border-radius: 8px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+    width: 40%; /* Decreased width of inner cards */
+     margin-bottom: 10px; /* Space between characteristics */
+     margin-top: 5Px;
+   }
+  
+  .left-align {
+    margin-left: 0; /* Align the inner cards to the left */
+   }
+  
+  .label {
+    font-weight: bold;
+    display: inline-block;
+    width: 150px;
+  }
+  
+  .total-marks {
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+  }
+
+   .characteristic {
+  width: 200px; /* Adjust the width of the inner cards */
+  margin-top: 10Px;
+}
+span{
+    text-align: left;
+}
+
+.content-in-corner {
+    position: absolute;
+    top: 15px;
+    right: 5px;
+    background-color: #fff; /* For better visibility */
+    padding: 3px 6px;
+    border-radius: 3px;
+    font-size: 14px;
+}
+.card-title.mb-5 {
+    font-size: 24px; /* Adjust font size */
+    font-weight: bold; /* Set font weight */
+    color: #333; /* Set text color */
+    text-transform: uppercase; /* Convert text to uppercase */
+    margin-bottom: 20px; /* Add some spacing */
+}
+.card-title.mb-4{
+    color: blue;
+}

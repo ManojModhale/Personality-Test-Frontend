@@ -24,7 +24,6 @@ import {MatFormFieldModule, MatLabel} from '@angular/material/form-field';
 import {MatIconModule} from '@angular/material/icon';
 import {MatInputModule} from '@angular/material/input';
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,6 +41,7 @@ import {MatInputModule} from '@angular/material/input';
     TimerComponent,
     QuestionComponent,
     TestFComponent,
+    TimerComponent
   ],
   imports: [
     BrowserModule,
