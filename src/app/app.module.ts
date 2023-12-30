@@ -16,6 +16,7 @@ import { TestComponent } from './Testing/test.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ChangePasswordComponent } from './ForgotPassword/change-password.component';
 import { TimerComponent } from './Timer/timer/timer.component';
+import { DashboardComponent } from './DasboardPage/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { TimerComponent } from './Timer/timer/timer.component';
     CarouselComponent,
     HomeComponent,
     TestComponent,
-    TimerComponent
+    TimerComponent,
+    DashboardComponent
    
   ],
   imports: [
