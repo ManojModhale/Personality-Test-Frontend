@@ -29,11 +29,11 @@ body {
   }
 
   #start-btn {
-    cursor: not-allowed;
+    cursor: default;
   }
 
   #start-btn:disabled {
     background-color: #6c757d;
     border-color: #6c757d;
-    cursor: not-allowed;
+    cursor: default;
   }

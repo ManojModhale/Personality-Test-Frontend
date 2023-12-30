@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-change-password',
@@ -12,7 +13,7 @@ export class ChangePasswordComponent {
 
   isSubmited:boolean=false;
 
-  constructor(private http: HttpClient) { 
+  constructor(private http: HttpClient,private router: Router) { 
 
   }
 
@@ -116,7 +117,8 @@ export class ChangePasswordComponent {
             {
               alert("Password has been successfully Updated!");
               
-              console.log("Password successful"+ response);
+              console.log("Password Change successful"+ response);
+              this.router.navigate(['/login']);
             }
             else{
               alert("Not Updated Password")

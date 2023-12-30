@@ -3,7 +3,7 @@
     <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
         <div class="card h-100 custom-card">
             <div class="card-body">
-                <form (ngSubmit)="updateProf()" [formGroup]="updateprof">
+                <form (ngSubmit)="updateProfile()" [formGroup]="updateprof">
                 <!-- Form content -->
                 <div class="row gutters">
                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
@@ -14,7 +14,7 @@
                         <div class="form-group" [ngClass]="{ 'has-danger': firstname.invalid && (firstname.dirty || firstname.touched),
                         'has-success': firstname.valid && (firstname.dirty || firstname.touched)  }">
                             <label for="firstname">First Name:</label>
-                            <input type="text" class="form-control"  formControlName="firstname" id="firstname" placeholder="Enter First Name">
+                            <input type="text" class="form-control"  formControlName="firstname" id="firstname" [value]="editProfile.firstname" placeholder="Enter First Name">
                         <div class="form-control-feedback" [ngClass]="'has-danger'" *ngIf="firstname.errors && (firstname.dirty || firstname.touched)">
                                 <p *ngIf="firstname.errors.required">Firstname is required</p>
                                 <p *ngIf="firstname.errors?.pattern">Firstname Must be Capitalize without Space</p>
@@ -25,7 +25,7 @@
                         <div class="form-group" [ngClass]="{ 'has-danger': lastname.invalid && (lastname.dirty || lastname.touched),
                             'has-success': lastname.valid && (lastname.dirty || lastname.touched)  }">
                             <label for="lastname">Last Name:</label>
-                            <input type="text" class="form-control" formControlName="lastname"  id="lastname" placeholder="Enter Last Name">
+                            <input type="text" class="form-control" formControlName="lastname" [value]="editProfile.lastname"  id="lastname" placeholder="Enter Last Name">
                         <div class="form-control-feedback" [ngClass]="'has-danger'" *ngIf="lastname.errors && (lastname.dirty || lastname.touched)">
                                 <p *ngIf="lastname.errors.required">Lastname is required</p>
                                 <p *ngIf="lastname.errors?.pattern">Lastname Must be Capitalize without Space</p>
@@ -37,7 +37,7 @@
                         <div class="form-group" [ngClass]="{ 'has-danger': email.invalid && (email.dirty || email.touched),
                         'has-success': email.valid && (email.dirty || email.touched)  }">  
                             <label for="Email">Email:</label>
-                            <input type="email" class="form-control" id="Email"  formControlName="email" placeholder="Enter Valid email address ">
+                            <input type="email" class="form-control" id="Email"  [value]="editProfile.email"  formControlName="email" placeholder="Enter Valid email address ">
                         <div class="form-control-feedback" *ngIf="email.errors && (email.dirty || email.touched)">
                                 <p *ngIf="email.errors?.required">Email is required</p>
                                 
@@ -50,7 +50,7 @@
                         <div class="form-group" [ngClass]="{ 'has-danger': mobileno.invalid && (mobileno.dirty || mobileno.touched),
                             'has-success': mobileno.valid && (mobileno.dirty || mobileno.touched)  }">
                             <label for="website">Contact Number</label>
-                            <input type="url" class="form-control" formControlName="mobileno"  id="website" placeholder="Coontact Number">
+                            <input type="url" class="form-control" formControlName="mobileno" [value]="editProfile.mobileno"  id="website" placeholder="Contact Number">
                         <div class="form-control-feedback" *ngIf="mobileno.errors && (mobileno.dirty || mobileno.touched)">
                                 <p *ngIf="mobileno.errors?.required">Mobile Number is required</p>
                                 
@@ -66,7 +66,7 @@
                         <div class="form-group" [ngClass]="{ 'has-danger': qualification.invalid && (qualification.dirty || qualification.touched),
                             'has-success': qualification.valid && (qualification.dirty || qualification.touched)  }">
                             <label for="qualification">Qualification</label>
-                            <input type="text" class="form-control" formControlName="qualification" id="qualification" placeholder="Qualification">
+                            <input type="text" class="form-control" formControlName="qualification" [value]="editProfile.qualification" id="qualification" placeholder="Qualification">
                         <div class="form-control-feedback" [ngClass]="'has-danger'" *ngIf="qualification.errors && (qualification.dirty || qualification.touched)">
                                 <p *ngIf="qualification.errors.required">Qualification is required</p>
                         </div>
@@ -77,7 +77,7 @@
                         <div class="form-group" [ngClass]="{ 'has-danger': designation.invalid && (designation.dirty || designation.touched),
                             'has-success': designation.valid && (designation.dirty || designation.touched)  }">
                             <label for="designation">Designation</label>
-                            <select class="form-select form-select-lg" id="designation" formControlName="designation">
+                            <select class="form-select form-select-lg" [value]="editProfile.designation" id="designation" formControlName="designation">
                                 <option value="" disabled>Select</option>
                                 <option value="Student">Student</option>
                                 <option value="Employee">Employee</option>
@@ -91,7 +91,7 @@
                  </div>
                  <div class="button-spacing">
                     <button type="button" id="cancel" name="cancel" class="btn btn-secondary">Cancel</button>
-                    <button type="button" id="update" name="update" class="btn btn-primary">Update</button>
+                    <button type="submit" id="update" name="update" class="btn btn-primary">Update</button>
                 </div>
             </form>
             </div>

@@ -119,6 +119,7 @@ export class RegisterComponent {
         (response: any) => {
           // Handle success response
           alert("Registered successfully!");
+          console.log(response);
           this.router.navigate(['/login']);
         },
         (error: any) => {

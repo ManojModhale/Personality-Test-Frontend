@@ -130,7 +130,7 @@
                             <div class="card-block text-center text-white">
                                 <i class="fas fa-user-tie fa-5x mt-5"></i>
                                 <h2 class="font-white-bold mt-3">Profile</h2>
-                                <span id="userName" class="font-weight-bold">{{UName}}</span>
+                                <span id="userName" class="font-weight-bold">{{userProfile.username}}</span>
                             </div>
                         </div>
                         <div class="col-sm-8 rounded-right">
@@ -142,7 +142,7 @@
                                     <label for="firstName" class="font-weight-bold">First Name:</label>
                                 </div>
                                 <div class="col-sm-7">
-                                    <span id="firstName" class="text-muted">{{fName}}</span>
+                                    <span id="firstName" class="text-muted">{{userProfile.firstname}}</span>
                                 </div>
                             </div>
                             <!-- Repeat similar structure for other fields --> 
@@ -151,7 +151,7 @@
                                     <label for="lastName" class="font-weight-bold">Last Name:</label>
                                 </div>
                                 <div class="col-sm-7">
-                                    <span id="lastName" class="text-muted">{{lName}}</span>
+                                    <span id="lastName" class="text-muted">{{userProfile.lastname}}</span>
                                 </div>
                             </div>
                             <div class="row mb-3">
@@ -159,7 +159,7 @@
                                     <label for="email" class="font-weight-bold">Email:</label>
                                 </div>
                                 <div class="col-sm-7">
-                                    <span id="email" class="text-muted">{{email}}</span>
+                                    <span id="email" class="text-muted">{{userProfile.email}}</span>
                                 </div>
                             </div>
                             <!-- Repeat similar structure for other fields -->
@@ -168,7 +168,7 @@
                                     <label for="contactNumber" class="font-weight-bold">Contact Number:</label>
                                 </div>
                                 <div class="col-sm-7">
-                                    <span id="contactNumber" class="text-muted">{{cNumber}}</span>
+                                    <span id="contactNumber" class="text-muted">{{userProfile.mobileno}}</span>
                                 </div>
                             </div>
                             <div class="row mb-3">
@@ -176,7 +176,7 @@
                                     <label for="qualification" class="font-weight-bold">Qualification:</label>
                                 </div>
                                 <div class="col-sm-7">
-                                    <span id="qualification" class="text-muted">{{qualification}}</span>
+                                    <span id="qualification" class="text-muted">{{userProfile.qualification}}</span>
                                 </div>
                             </div>
                         </div>

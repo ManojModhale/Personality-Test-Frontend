@@ -49,7 +49,15 @@ export class LoginComponent {
             {
               alert("Login Successfully")
               console.log('Login successful', response);
-              this.router.navigate(['/home']);
+              //this.router.navigate(['/home']);
+
+              const loggedUser=response;
+
+              //console.log("Logged User "+loggedUser);
+
+              //sessionStorage.setItem("loggedUser",loggedUser);
+              
+              this.router.navigateByUrl("/home");
             }
             else{
               alert("Wrong Credentials")

@@ -21,14 +21,15 @@
         <li>Your internet connection must be strong to complete the exam.</li>
       </ol>
     </div>
-
+    
     <div class="form-check text-center">
-      <input type="checkbox" class="form-check-input" id="read-instructions">
+      <input type="checkbox" class="form-check-input" id="read-instructions" [(ngModel)]="isCheckboxChecked" name="readInstructions"
+       required #readInstructions="ngModel">
       <label class="form-check-label" for="read-instructions">I have read all the instructions</label>
     </div>
 
     <div class="text-center mt-3">
-        <button id="start-btn" class="btn btn-primary" disabled>Start Exam</button>
+        <button id="start-btn" class="btn btn-info"  [disabled]="!isCheckboxChecked" (click)="startExam()">Start Exam</button>
     </div>
 
   </div>

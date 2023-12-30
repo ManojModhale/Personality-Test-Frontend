@@ -4,13 +4,21 @@ import { WelcomeComponent } from './WelcomePage/welcome.component';
 import { LoginComponent } from './LoginPage/login.component';
 import { RegisterComponent } from './RegistrationPage/register.component';
 import { HomeComponent } from './HomePage/home.component';
+import { ChangePasswordComponent } from './ForgotPassword/change-password.component';
+import { ExamComponent } from './ExamPage/exam.component';
+import { ProfileComponent } from './ProfilePage/profile.component';
+import { EditcompComponent } from './EditProfile/editcomp/editcomp.component';
 
 const routes: Routes = [
   {path:'',component:WelcomeComponent},
   {path:'login',component:LoginComponent},
-  {path:'register',component:RegisterComponent},
+  {path:'forgotpass',component:ChangePasswordComponent},
+  {path:'newuser',component:RegisterComponent},
   {path: '', redirectTo: '/login', pathMatch: 'full' },
-  {path:'home',component:HomeComponent}
+  {path:'home',component:HomeComponent},
+  {path:'exam',component:ExamComponent},
+  {path:'profile',component:ProfileComponent},
+  {path:'editprofile',component:EditcompComponent}
 ];
 
 @NgModule({
