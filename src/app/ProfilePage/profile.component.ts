@@ -13,7 +13,8 @@ interface UserProfile {
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
-  styleUrl: './profile.component.css'
+  //styleUrl: './profile.component.css'
+  styleUrls: ['./profile.component.css', '../HomePage/home.component.css']
 })
 export class ProfileComponent implements OnInit {
 
@@ -37,8 +38,12 @@ export class ProfileComponent implements OnInit {
   }
 
   loadUserProfile(){
-    const username = 'ganesh1'; 
-    this.http.get<UserProfile>(`${this.baseUrl}/profile/${username}`).subscribe(
+    let LoggedUser = sessionStorage.getItem("LoggedUser");
+    if (LoggedUser) {
+    let parsedUser = JSON.parse(LoggedUser);
+    
+    const username1=parsedUser.username;
+    this.http.get<UserProfile>(`${this.baseUrl}/profile/${username1}`).subscribe(
       response => {
         this.userProfile = response;
       },
@@ -46,7 +51,10 @@ export class ProfileComponent implements OnInit {
         console.error('Error fetching user profile', error);
       }
     );
+  }else {
+    console.error('LoggedUser is null'); // Handle the case where LoggedUser is null
   }
+}
 
   
   

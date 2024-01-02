@@ -2,48 +2,94 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css">
 
 <div class="container mt-5">
+  <div *ngIf="currentQuestion">
     <div class="question-container bg-white p-4 rounded shadow">
-      <h2>How do you feel about this statement?</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nonne merninisti licere mihi ista probare, quae sunt a te dicta?</p>
+      <h2><strong>{{ currentQuestion.id }} ::</strong>{{ currentQuestion.questionText }}</h2>
       
       <div class="options-container mt-3">
-        <div class="form-check">
-          <input class="form-check-input" type="radio" name="options" id="stronglyDisagree" value="stronglyDisagree">
-          <label class="form-check-label option-label" for="stronglyDisagree">
-            Strongly Disagree
-          </label>
-        </div>
+      <div [ngSwitch]="currentQuestion.questionType">
 
-        <div class="form-check">
-          <input class="form-check-input" type="radio" name="options" id="disagree" value="disagree">
-          <label class="form-check-label option-label" for="disagree">
-            Disagree
-          </label>
-        </div>
+        <ng-container *ngSwitchCase="'positive'">
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="answer" id="stronglyDisagree"  value="1" (change)="selectOption($event)">
+            <label class="form-check-label option-label" for="stronglyDisagree">
+              Strongly Disagree
+            </label>
+          </div>
+  
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="answer" id="disagree"  value="2" (change)="selectOption($event)">
+            <label class="form-check-label option-label" for="disagree">
+              Disagree
+            </label>
+          </div>
+  
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="answer" id="neutral" value="3" (change)="selectOption($event)">
+            <label class="form-check-label option-label" for="neutral">
+              Neutral
+            </label>
+          </div>
+  
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="answer" id="agree" value="4" (change)="selectOption($event)">
+            <label class="form-check-label option-label" for="agree">
+              Agree
+            </label>
+          </div>
+  
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="answer" id="stronglyAgree" value="5" (change)="selectOption($event)">
+            <label class="form-check-label option-label" for="stronglyAgree">
+              Strongly Agree
+            </label>
+          </div>
+        </ng-container>
 
-        <div class="form-check">
-          <input class="form-check-input" type="radio" name="options" id="neutral" value="neutral">
-          <label class="form-check-label option-label" for="neutral">
-            Neutral
-          </label>
-        </div>
+        <ng-container *ngSwitchCase="'negative'">
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="answer" id="stronglyDisagree"  value="5" (change)="selectOption($event)">
+            <label class="form-check-label option-label" for="stronglyDisagree">
+              Strongly Disagree
+            </label>
+          </div>
+  
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="answer" id="disagree"  value="4" (change)="selectOption($event)">
+            <label class="form-check-label option-label" for="disagree">
+              Disagree
+            </label>
+          </div>
+  
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="answer" id="neutral" value="3" (change)="selectOption($event)">
+            <label class="form-check-label option-label" for="neutral">
+              Neutral
+            </label>
+          </div>
+  
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="answer" id="agree" value="2" (change)="selectOption($event)">
+            <label class="form-check-label option-label" for="agree">
+              Agree
+            </label>
+          </div>
+  
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="answer" id="stronglyAgree" value="1" (change)="selectOption($event)">
+            <label class="form-check-label option-label" for="stronglyAgree">
+              Strongly Agree
+            </label>
+          </div>
+        </ng-container>
 
-        <div class="form-check">
-          <input class="form-check-input" type="radio" name="options" id="agree" value="agree">
-          <label class="form-check-label option-label" for="agree">
-            Agree
-          </label>
-        </div>
 
-        <div class="form-check">
-          <input class="form-check-input" type="radio" name="options" id="stronglyAgree" value="stronglyAgree">
-          <label class="form-check-label option-label" for="stronglyAgree">
-            Strongly Agree
-          </label>
-        </div>
+      </div>
       </div>
 
-      <button class="btn btn-primary next-button">Next</button>
+      <button class="btn btn-primary next-button" *ngIf="currentQuestion.id<10" (click)="onButtonClick()">Next</button>
+      <button class="btn btn-primary next-button" *ngIf="currentQuestion.id==10" (click)="submitResponses()">Submit</button>
+    </div>
     </div>
   </div>
 
