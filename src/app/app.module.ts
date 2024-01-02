@@ -23,6 +23,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatFormFieldModule, MatLabel} from '@angular/material/form-field';
 import {MatIconModule} from '@angular/material/icon';
 import {MatInputModule} from '@angular/material/input';
+import { NotfoundComponent } from './NotfoundPage/notfound.component';
+
 
 @NgModule({
   declarations: [
@@ -41,7 +43,8 @@ import {MatInputModule} from '@angular/material/input';
     TimerComponent,
     QuestionComponent,
     TestFComponent,
-    TimerComponent
+    TimerComponent,
+    NotfoundComponent
   ],
   imports: [
     BrowserModule,
@@ -55,7 +58,6 @@ import {MatInputModule} from '@angular/material/input';
     MatFormFieldModule,
     MatIconModule,
     MatInputModule,
-    
   ],
   providers: [],
   bootstrap: [AppComponent]
