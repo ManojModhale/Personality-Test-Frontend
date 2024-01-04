@@ -4,6 +4,7 @@ import { SendAnswersService } from '../All-Servicess/send-answers.service';
 import { QuestionService } from '../All-Servicess/question.service';
 import { Subject, takeUntil } from 'rxjs';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 
 
 @Component({
@@ -94,10 +95,20 @@ export class QuestionComponent {
 
       console.log('Submitted Responses:', responses);
 
+      this.showResponsesSubmittedAlert();
+
       this.router.navigateByUrl('/dashboard');
       
       }
       
+    }
+
+    private showResponsesSubmittedAlert() {
+      Swal.fire({
+        icon: 'success',
+        title: 'Responses Submitted!',
+        text: 'Your responses have been submitted successfully.',
+      });
     }
 
 

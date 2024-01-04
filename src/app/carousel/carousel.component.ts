@@ -10,9 +10,9 @@ import { FormsModule } from '@angular/forms';
 export class CarouselComponent {
 
   images = [
-    "./assets/Images/img.jpeg",
-    "./assets/Images/img1.jpg",
-    "./assets/Images/img2.jpg",
+    "./assets/Images/F1.jpg",
+    "./assets/Images/F2.png",
+    "./assets/Images/F3.jpg",
   ];
 
 	paused = false;
