@@ -24,6 +24,11 @@ import {MatFormFieldModule, MatLabel} from '@angular/material/form-field';
 import {MatIconModule} from '@angular/material/icon';
 import {MatInputModule} from '@angular/material/input';
 import { NotfoundComponent } from './NotfoundPage/notfound.component';
+import { ExamtimeService } from './All-Servicess/examtime.service';
+import { SendAnswersService } from './All-Servicess/send-answers.service';
+import { QuestionService } from './All-Servicess/question.service';
+import { GetAllTestsService } from './All-Servicess/get-all-tests.service';
+import { DashboardComponent } from './DasboardPage/dashboard.component';
 
 
 @NgModule({
@@ -44,7 +49,9 @@ import { NotfoundComponent } from './NotfoundPage/notfound.component';
     QuestionComponent,
     TestFComponent,
     TimerComponent,
-    NotfoundComponent
+    NotfoundComponent,
+    DashboardComponent
+
   ],
   imports: [
     BrowserModule,
@@ -59,7 +66,7 @@ import { NotfoundComponent } from './NotfoundPage/notfound.component';
     MatIconModule,
     MatInputModule,
   ],
-  providers: [],
+  providers: [ExamtimeService,SendAnswersService,QuestionService,GetAllTestsService],
   bootstrap: [AppComponent]
 })
 

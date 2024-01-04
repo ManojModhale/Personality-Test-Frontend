@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 interface UserProfile {
   username: string;
@@ -16,6 +17,7 @@ interface UserProfile {
   selector: 'app-editcomp',
   templateUrl: './editcomp.component.html',
   styleUrl: './editcomp.component.css'
+  
 })
 export class EditcompComponent implements OnInit {
 
@@ -31,7 +33,7 @@ export class EditcompComponent implements OnInit {
     designation: ''
   };
   
-  constructor(private http: HttpClient) { 
+  constructor(private http: HttpClient,private router:Router) { 
 
   }
 
@@ -40,8 +42,13 @@ export class EditcompComponent implements OnInit {
   }
 
   loadUserProfile(){
-    const username = 'manoj0123'; 
-    this.http.get<UserProfile>(`${this.baseUrl}/profile/${username}`).subscribe(
+    let LoggedUser = sessionStorage.getItem("LoggedUser");
+    if (LoggedUser) {
+    let parsedUser = JSON.parse(LoggedUser);
+    
+    const username1=parsedUser.username;
+   
+    this.http.get<UserProfile>(`${this.baseUrl}/profile/${username1}`).subscribe(
       response => {
         this.editProfile = response;
         this.editProfile.mobileno = +this.editProfile.mobileno;
@@ -60,6 +67,9 @@ export class EditcompComponent implements OnInit {
         console.error('Error fetching user profile', error);
       }
     );
+  }else {
+    console.error('LoggedUser is null'); // Handle the case where LoggedUser is null
+  }
   }
 
   updateprof = new FormGroup({
@@ -123,7 +133,7 @@ myForm:any;
           // Handle success response
           alert("Profile updated successfully!");
           console.log(response);
-          
+          this.router.navigateByUrl('/home');
         },
         (error: any) => {
           // Handle error response

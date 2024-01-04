@@ -1,0 +1,134 @@
+{
+  "questions": [
+    {
+      "id": 1,
+      "questionType": "positive",
+      "questionText": "I am interested in new experiences and ideas.",
+      "options": ["Strongly Agree", "Agree", "Neutral", "Disagree", "Strongly Disagree"],
+      "personalityTrait": "Openness"
+    },
+    {
+      "id": 404,
+      "questionType": "",
+      "questionText": "",
+      "options": [],
+      "personalityTrait": ""
+    },{
+      "id": 2,
+      "questionType": "negative",
+      "questionText": "I am resistant to change and prefer familiar routines.",
+      "options": ["Strongly Agree", "Agree", "Neutral", "Disagree", "Strongly Disagree"],
+      "personalityTrait": "Openness"
+    },{
+      "id": 404,
+      "questionType": "",
+      "questionText": "",
+      "options": [],
+      "personalityTrait": ""
+    },
+    {
+      "id": 3,
+      "questionType": "positive",
+      "questionText": "I am organized and pay attention to details.",
+      "options": ["Strongly Agree", "Agree", "Neutral", "Disagree", "Strongly Disagree"],
+      "personalityTrait": "Conscientiousness"
+    },
+    {
+      "id": 404,
+      "questionType": "",
+      "questionText": "",
+      "options": [],
+      "personalityTrait": ""
+    },{
+      "id": 4,
+      "questionType": "negative",
+      "questionText": "I often overlook details and am not very organized.",
+      "options": ["Strongly Agree", "Agree", "Neutral", "Disagree", "Strongly Disagree"],
+      "personalityTrait": "Conscientiousness"
+    },{
+      "id": 404,
+      "questionType": "",
+      "questionText": "",
+      "options": [],
+      "personalityTrait": ""
+    },
+    {
+      "id": 5,
+      "questionType": "positive",
+      "questionText": "I enjoy being the center of attention at social events.",
+      "options": ["Strongly Agree", "Agree", "Neutral", "Disagree", "Strongly Disagree"],
+      "personalityTrait": "Extraversion"
+    },{
+      "id": 404,
+      "questionType": "",
+      "questionText": "",
+      "options": [],
+      "personalityTrait": ""
+    },{
+      "id": 6,
+      "questionType": "negative",
+      "questionText": "I prefer to stay in the background and avoid socializing.",
+      "options": ["Strongly Agree", "Agree", "Neutral", "Disagree", "Strongly Disagree"],
+      "personalityTrait": "Extraversion"
+    },{
+      "id": 404,
+      "questionType": "",
+      "questionText": "",
+      "options": [],
+      "personalityTrait": ""
+    },
+    {
+      "id": 7,
+      "questionType": "positive",
+      "questionText": "I am compassionate and kind to others.",
+      "options": ["Strongly Agree", "Agree", "Neutral", "Disagree", "Strongly Disagree"],
+      "personalityTrait": "Agreeableness"
+    },
+    {
+      "id": 404,
+      "questionType": "",
+      "questionText": "",
+      "options": [],
+      "personalityTrait": ""
+    }, {
+      "id": 8,
+      "questionType": "negative",
+      "questionText": "I am skeptical and find it difficult to trust others.",
+      "options": ["Strongly Agree", "Agree", "Neutral", "Disagree", "Strongly Disagree"],
+      "personalityTrait": "Agreeableness"
+    },{
+      "id": 404,
+      "questionType": "",
+      "questionText": "",
+      "options": [],
+      "personalityTrait": ""
+    },
+    {
+      "id": 9,
+      "questionType": "positive",
+      "questionText": "I handle stress well and remain calm under pressure.",
+      "options": ["Strongly Agree", "Agree", "Neutral", "Disagree", "Strongly Disagree"],
+      "personalityTrait": "Neuroticism"
+    },{
+      "id": 404,
+      "questionType": "",
+      "questionText": "",
+      "options": [],
+      "personalityTrait": ""
+    },
+    {
+      "id": 10,
+      "questionType": "negative",
+      "questionText": "I find creative expression to be unnecessary and unimportant.",
+      "options": ["Strongly Agree", "Agree", "Neutral", "Disagree", "Strongly Disagree"],
+      "personalityTrait": "Openness"
+    },{
+      "id": 404,
+      "questionType": "",
+      "questionText": "",
+      "options": [],
+      "personalityTrait": ""
+    }
+     
+  ]
+}

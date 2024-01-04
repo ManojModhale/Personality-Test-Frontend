@@ -55,6 +55,6 @@ span{
     text-transform: uppercase; /* Convert text to uppercase */
     margin-bottom: 20px; /* Add some spacing */
 }
-.card-title.mb-4{
+ .card-title.mb-4{
     color: blue;
-}
+} 

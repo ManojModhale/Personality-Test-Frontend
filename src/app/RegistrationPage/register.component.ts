@@ -120,7 +120,7 @@ export class RegisterComponent {
           // Handle success response
           alert("Registered successfully!");
           console.log(response);
-          this.router.navigate(['/login']);
+          this.router.navigateByUrl('/login');
         },
         (error: any) => {
           // Handle error response

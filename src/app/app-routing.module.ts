@@ -8,15 +8,18 @@ import { ChangePasswordComponent } from './ForgotPassword/change-password.compon
 import { ExamComponent } from './ExamPage/exam.component';
 import { ProfileComponent } from './ProfilePage/profile.component';
 import { EditcompComponent } from './EditProfile/editcomp/editcomp.component';
+import { QuestionComponent } from './QuestionPage/question.component';
+import { DashboardComponent } from './DasboardPage/dashboard.component';
 
 const routes: Routes = [
   {path:'',component:WelcomeComponent},
   {path:'login',component:LoginComponent},
   {path:'forgotpass',component:ChangePasswordComponent},
   {path:'newuser',component:RegisterComponent},
-  {path: '', redirectTo: '/login', pathMatch: 'full' },
   {path:'home',component:HomeComponent},
   {path:'exam',component:ExamComponent},
+  {path:'question',component:QuestionComponent},
+  {path:'dashboard',component:DashboardComponent},
   {path:'profile',component:ProfileComponent},
   {path:'editprofile',component:EditcompComponent}
 ];

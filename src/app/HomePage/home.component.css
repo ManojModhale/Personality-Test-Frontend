@@ -25,7 +25,24 @@ header a:hover {
 main {
     padding: 20px;
     text-align: center;
+    color: white;
+    
 }
+.main-content{
+    background-image: url('/assets/background2.jpg');
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+    padding: 0;
+    flex-grow: 1;
+}
+.outerdiv {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+
 
 footer {
     background-color: #333;
@@ -69,3 +86,8 @@ footer {
         margin-top: 10px;
     }
 }
+
+.trait-section{
+    overflow-y: auto;
+}
+

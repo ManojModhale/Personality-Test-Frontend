@@ -12,22 +12,24 @@ export class ChangePasswordComponent {
   private baseUrl:any = 'http://localhost:8182/user'; 
 
   isSubmited:boolean=false;
+  generatedOTP:number=0;
 
-  constructor(private http: HttpClient,private router: Router) { 
+  constructor(private http: HttpClient, private router: Router) { 
 
   }
 
   showOtp = false;
+  //,Validators.pattern(/^[0-9]{6}$/)
   showNewPassword = false;
 
   forgotPasswordForm=new FormGroup({
     username:new FormControl("",[Validators.required,Validators.pattern(/^\S*$/)]),
     email:new FormControl("",[Validators.required,Validators.email]),
-    otp:new FormControl("",[Validators.required,Validators.pattern(/^[0-9]{6}$/)]),
+    otp:new FormControl("",[Validators.required]),
     password:new FormControl("",[Validators.required,Validators.minLength(8),Validators.pattern(/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&]).{4,20}$/)]),
     confirmpass:new FormControl("",[Validators.required, this.matchPassword.bind(this)])
   });
-
+  
   matchPassword(control: AbstractControl): { [key: string]: boolean } | null {
     if (!this.forgotPasswordForm || !this.forgotPasswordForm.get('password')) {
       console.error('Form or password control not initialized.');
@@ -74,11 +76,12 @@ export class ChangePasswordComponent {
         
         console.log(response);
 
-        if(response!=null)
+        if(response!=0)
             {
               alert("User Found successfully!");
               this.showOtp = true;
-              console.log('User Found successful', response);
+              this.generatedOTP=response;
+             
             }
             else{
               alert("Wrong User")
@@ -95,9 +98,15 @@ export class ChangePasswordComponent {
   }
 
   verifyOtp() {
-    // Add logic to verify OTP and show New Password fields
-    // For now, let's simulate OTP verification
-    this.showNewPassword = true;
+    if(this.generatedOTP==this.otp.value)
+    {
+      this.showNewPassword = true;
+    }
+    else{
+      this.showNewPassword = false;
+      alert("Entered Otp doesn't match with Generated Otp.....Please Check your email and try again.");
+    }
+    
   }
 
   updatePassword() {
@@ -118,7 +127,7 @@ export class ChangePasswordComponent {
               alert("Password has been successfully Updated!");
               
               console.log("Password Change successful"+ response);
-              this.router.navigate(['/login']);
+              this.router.navigateByUrl('/login');
             }
             else{
               alert("Not Updated Password")

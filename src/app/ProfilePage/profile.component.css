@@ -5,6 +5,23 @@ height:200px;
 }	
 
 .profile-container {
-    padding-top: 70px; /* Adjust the padding as needed */
+padding-top: 70px; 
+
 }
 
+
+.body{
+     background-image: url('/assets/profile.jpg'); 
+    background-size: cover;
+    background-position: center; 
+    height: 100vh; 
+}
+
+
+.card{
+    /* background-color: beige; */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color:rgb(245, 242, 242);
+    backdrop-filter: blur(5px);
+}
+  

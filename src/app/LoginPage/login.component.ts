@@ -54,6 +54,7 @@ export class LoginComponent {
               const loggedUser=response;
 
               //console.log("Logged User "+loggedUser);
+              sessionStorage.setItem("LoggedUser", JSON.stringify(loggedUser));
 
               //sessionStorage.setItem("loggedUser",loggedUser);
               
