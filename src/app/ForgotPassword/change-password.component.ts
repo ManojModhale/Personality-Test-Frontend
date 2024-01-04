@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-change-password',
@@ -62,55 +63,182 @@ export class ChangePasswordComponent {
     return this.forgotPasswordForm.get('confirmpass');
   }
 
-  submitForm() {
+  /* <------------------------------------------------> */
 
+  // submitForm() {
+
+  //   const forgotpassData = new FormData();
+  //   forgotpassData.append('username', this.username.value);
+  //   forgotpassData.append('email', this.email.value);
+
+  //   console.log(forgotpassData);
+
+  //   this.http.post(this.baseUrl + "/forgotpass", forgotpassData).subscribe(
+  //     (response: any) => {
+  //       // Handle success response
+        
+  //       console.log(response);
+
+  //       if(response!=0)
+  //           {
+  //             alert("User Found successfully!");
+  //             this.showOtp = true;
+  //             this.generatedOTP=response;
+             
+  //           }
+  //           else{
+  //             alert("Wrong User")
+  //             console.log('Wrong User', response);
+  //           }     
+  //     },
+  //     (error: any) => {
+  //       // Handle error response
+  //       alert("Error in Forgot Password: " + error.message);
+  //       console.error('Error Register:', error);
+  //     }
+  //   );
+    
+  // }
+
+  /* <------------------------------------------------> */
+
+  submitForm() {
     const forgotpassData = new FormData();
     forgotpassData.append('username', this.username.value);
     forgotpassData.append('email', this.email.value);
-
+  
     console.log(forgotpassData);
-
+  
     this.http.post(this.baseUrl + "/forgotpass", forgotpassData).subscribe(
       (response: any) => {
         // Handle success response
-        
         console.log(response);
-
-        if(response!=0)
-            {
-              alert("User Found successfully!");
-              this.showOtp = true;
-              this.generatedOTP=response;
-             
-            }
-            else{
-              alert("Wrong User")
-              console.log('Wrong User', response);
-            }     
+  
+        if (response !== 0) {
+          this.showUserFoundAlert();
+          this.showOtp = true;
+          this.generatedOTP = response;
+        } else {
+          this.showWrongUserAlert();
+          console.log('Wrong User', response);
+        }
       },
       (error: any) => {
         // Handle error response
-        alert("Error in Forgot Password: " + error.message);
-        console.error('Error Register:', error);
+        this.showForgotPasswordErrorAlert(error.message);
+        console.error('Error in Forgot Password:', error);
       }
     );
-    
   }
+  
+  private showUserFoundAlert() {
+    Swal.fire({
+      icon: 'success',
+      title: 'User Found Successfully!',
+      text: 'The user has been found successfully.',
+    });
+  }
+  
+  private showWrongUserAlert() {
+    Swal.fire({
+      icon: 'error',
+      title: 'Wrong User',
+      text: 'The provided username or email is incorrect.',
+    });
+  }
+  
+  private showForgotPasswordErrorAlert(errorMessage: string) {
+    Swal.fire({
+      icon: 'error',
+      title: 'Error in Forgot Password',
+      text: `There was an error during the Forgot Password process: ${errorMessage}`,
+    });
+  }
+
+  /* <------------------------------------------> */
+
+  // verifyOtp() {
+  //   if(this.generatedOTP==this.otp.value)
+  //   {
+  //     this.showNewPassword = true;
+  //   }
+  //   else{
+  //     this.showNewPassword = false;
+  //     alert("Entered Otp doesn't match with Generated Otp.....Please Check your email and try again.");
+  //   }
+    
+  // }
+
+   /* <------------------------------------------------> */
 
   verifyOtp() {
-    if(this.generatedOTP==this.otp.value)
-    {
+    if (this.generatedOTP == this.otp.value) {
       this.showNewPassword = true;
-    }
-    else{
+      this.showOtpVerifiedAlert();
+    } else {
       this.showNewPassword = false;
-      alert("Entered Otp doesn't match with Generated Otp.....Please Check your email and try again.");
+      this.showOtpMismatchAlert();
     }
-    
   }
+  
+  private showOtpVerifiedAlert() {
+    Swal.fire({
+      icon: 'success',
+      title: 'OTP Verified!',
+      text: 'The OTP has been successfully verified.',
+    });
+  }
+  
+  private showOtpMismatchAlert() {
+    Swal.fire({
+      icon: 'error',
+      title: 'OTP Mismatch',
+      text: 'Entered OTP does not match with the generated OTP. Please check your email and try again.',
+    });
+  }
+  
+
+  /* <------------------------------------------------> */
+
+  // updatePassword() {
+    
+  //   const changepass = new FormData();
+  //   changepass.append('username', this.username.value);
+  //   changepass.append('password', this.password.value);
+
+  //   console.log(changepass);
+
+  //   this.http.post(this.baseUrl + "/changepass", changepass).subscribe(
+  //     (response: any) => {
+        
+  //       console.log(response);
+
+  //         if(response==true)
+  //           {
+  //             alert("Password has been successfully Updated!");
+              
+  //             console.log("Password Change successful"+ response);
+  //             this.router.navigateByUrl('/login');
+  //           }
+  //           else{
+  //             alert("Not Updated Password")
+  //             console.log("Not Updated Password"+ response);
+  //           }     
+  //     },
+  //     (error: any) => {
+  //       // Handle error response
+  //       alert("Error in Update Password: " + error.message);
+  //       console.error('Error Update Passsord:', error);
+  //     }
+  //   );
+
+  //   //console.log(this.forgotPasswordForm.value);
+  //   // alert('Password updated successfully!');
+  // }
+
+  /* <------------------------------------------------> */
 
   updatePassword() {
-    
     const changepass = new FormData();
     changepass.append('username', this.username.value);
     changepass.append('password', this.password.value);
@@ -119,29 +247,46 @@ export class ChangePasswordComponent {
 
     this.http.post(this.baseUrl + "/changepass", changepass).subscribe(
       (response: any) => {
-        
         console.log(response);
 
-          if(response==true)
-            {
-              alert("Password has been successfully Updated!");
-              
-              console.log("Password Change successful"+ response);
-              this.router.navigateByUrl('/login');
-            }
-            else{
-              alert("Not Updated Password")
-              console.log("Not Updated Password"+ response);
-            }     
+        if (response === true) {
+          this.showPasswordUpdateSuccessAlert();
+          console.log("Password Change successful" + response);
+          this.router.navigateByUrl('/login');
+        } else {
+          this.showNotUpdatedPasswordAlert();
+          console.log("Not Updated Password" + response);
+        }
       },
       (error: any) => {
         // Handle error response
-        alert("Error in Update Password: " + error.message);
-        console.error('Error Update Passsord:', error);
+        this.showPasswordUpdateErrorAlert(error.message);
+        console.error('Error Update Password:', error);
       }
     );
+  }
 
-    //console.log(this.forgotPasswordForm.value);
-    alert('Password updated successfully!');
+  private showPasswordUpdateSuccessAlert() {
+    Swal.fire({
+      icon: 'success',
+      title: 'Password Updated!',
+      text: 'Your password has been successfully updated.',
+    });
+  }
+
+  private showNotUpdatedPasswordAlert() {
+    Swal.fire({
+      icon: 'error',
+      title: 'Not Updated Password',
+      text: 'There was an issue updating your password. Please try again.',
+    });
+  }
+
+  private showPasswordUpdateErrorAlert(errorMessage?: string) {
+    Swal.fire({
+      icon: 'error',
+      title: 'Error in Update Password',
+      text: errorMessage || 'There was an error during password update. Please try again.',
+    });
   }
 }
