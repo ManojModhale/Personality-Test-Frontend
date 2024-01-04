@@ -3,7 +3,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
 <!-- Font Awesome CSS -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css">
-
+<div class="main">
 <header>
   <div class="d-flex align-items-center">
       <span>Your Project Name</span>
@@ -33,13 +33,13 @@
   <div class="container">
     <div class="row">
       <div class="col-12">
-        <h1>Hi, {{firstname}} {{lastname}}</h1>
-        <h3>This is Your Previous Exam Results on this Dashboard</h3>
+        <h1 align="center">Hi, {{firstname}} {{lastname}}</h1>
+        <h3 align="center">This is Your Previous Exam Results on this Dashboard</h3>
       </div>
     </div>
     <div class="row mt-6 ">
-      <div class="col-lg-4">
-        <div class="card p-5 shadow "  *ngFor="let test of tests">
+      <div class="col-lg-4"  *ngFor="let test of tests">
+        <div class="card p-5 shadow " >
             <h5 class="card-title mb-5">Exam Time : {{test.startExamDate | date:'medium'}}</h5>
             <div class="characteristics left-align">
               <div class="card characteristic">
@@ -71,7 +71,7 @@
               </div>
               <div class="card characteristic">
                 <div class="card-body">
-                  <h6 class="card-title mb-4">Total Marks : <span class="content-in-corner">{{test.openness+test.conscientiousness+test.extraversion+test.agreeableness+test.neuroticism}}</span></h6>
+                  <h6 class="card-title mb-4">Total Marks : - <span class="content-in-corner">{{test.openness+test.conscientiousness+test.extraversion+test.agreeableness+test.neuroticism}}</span></h6>
                 </div>
               </div>
             
@@ -81,6 +81,7 @@
       </div>
     </div>
   </div> 
+</div>
 
 
      

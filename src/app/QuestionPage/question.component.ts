@@ -4,6 +4,7 @@ import { SendAnswersService } from '../All-Servicess/send-answers.service';
 import { QuestionService } from '../All-Servicess/question.service';
 import { Subject, takeUntil } from 'rxjs';
 import { Router } from '@angular/router';
+import { TimerComponent } from '../Timer/timer/timer.component';
 
 
 @Component({
@@ -13,7 +14,7 @@ import { Router } from '@angular/router';
 })
 export class QuestionComponent {
 
-  
+  showTimer: boolean = true;
   currentQuestion: any;
   selectedOption: string | null = null;
   private destroy$ = new Subject<void>();
@@ -82,7 +83,7 @@ export class QuestionComponent {
   
     submitResponses(): void {
       const LoggedUser = sessionStorage.getItem("LoggedUser");
-      
+      this.showTimer = false;
       if(LoggedUser)
       {
       let parsedUser = JSON.parse(LoggedUser);

@@ -5,6 +5,11 @@ body {
     padding: 0;
     box-sizing: border-box;
   }
+  .main{
+    background:#f8f9fa;
+    
+    min-height: 100vh;
+  }
 
   #main-container {
     background-color: #ffffff;

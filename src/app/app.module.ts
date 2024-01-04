@@ -28,6 +28,7 @@ import { SendAnswersService } from './All-Servicess/send-answers.service';
 import { QuestionService } from './All-Servicess/question.service';
 import { GetAllTestsService } from './All-Servicess/get-all-tests.service';
 import { DashboardComponent } from './DasboardPage/dashboard.component';
+import { LogoutComponent } from './LogoutPage/logout.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { DashboardComponent } from './DasboardPage/dashboard.component';
     QuestionComponent,
     TestFComponent,
     TimerComponent,
-    DashboardComponent
+    DashboardComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,

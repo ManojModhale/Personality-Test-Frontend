@@ -3,9 +3,9 @@
     {
       "id": 1,
       "questionType": "positive",
-      "questionText": "I am interested in new experiences and ideas.",
+      "questionText": "I have a soft heart.",
       "options": ["Strongly Agree", "Agree", "Neutral", "Disagree", "Strongly Disagree"],
-      "personalityTrait": "Openness"
+      "personalityTrait": "Agreeableness"
     },
     {
       "id": 404,
@@ -16,7 +16,33 @@
     },{
       "id": 2,
       "questionType": "negative",
-      "questionText": "I am resistant to change and prefer familiar routines.",
+      "questionText": "I have frequent mood swings..",
+      "options": ["Strongly Agree", "Agree", "Neutral", "Disagree", "Strongly Disagree"],
+      "personalityTrait": "Neuroticism"
+    },{
+      "id": 404,
+      "questionType": "",
+      "questionText": "",
+      "options": [],
+      "personalityTrait": ""
+    },
+    {
+      "id": 3,
+      "questionType": "negative",
+      "questionText": "I find it difficult to approach others.",
+      "options": ["Strongly Agree", "Agree", "Neutral", "Disagree", "Strongly Disagree"],
+      "personalityTrait": "Extraversion"
+    },
+    {
+      "id": 404,
+      "questionType": "",
+      "questionText": "",
+      "options": [],
+      "personalityTrait": ""
+    },{
+      "id": 4,
+      "questionType": "positive",
+      "questionText": "I Love to think up new ways of doing things.",
       "options": ["Strongly Agree", "Agree", "Neutral", "Disagree", "Strongly Disagree"],
       "personalityTrait": "Openness"
     },{
@@ -27,35 +53,9 @@
       "personalityTrait": ""
     },
     {
-      "id": 3,
-      "questionType": "positive",
-      "questionText": "I am organized and pay attention to details.",
-      "options": ["Strongly Agree", "Agree", "Neutral", "Disagree", "Strongly Disagree"],
-      "personalityTrait": "Conscientiousness"
-    },
-    {
-      "id": 404,
-      "questionType": "",
-      "questionText": "",
-      "options": [],
-      "personalityTrait": ""
-    },{
-      "id": 4,
-      "questionType": "negative",
-      "questionText": "I often overlook details and am not very organized.",
-      "options": ["Strongly Agree", "Agree", "Neutral", "Disagree", "Strongly Disagree"],
-      "personalityTrait": "Conscientiousness"
-    },{
-      "id": 404,
-      "questionType": "",
-      "questionText": "",
-      "options": [],
-      "personalityTrait": ""
-    },
-    {
       "id": 5,
       "questionType": "positive",
-      "questionText": "I enjoy being the center of attention at social events.",
+      "questionText": "I Feel comfortable around people.",
       "options": ["Strongly Agree", "Agree", "Neutral", "Disagree", "Strongly Disagree"],
       "personalityTrait": "Extraversion"
     },{
@@ -66,10 +66,10 @@
       "personalityTrait": ""
     },{
       "id": 6,
-      "questionType": "negative",
-      "questionText": "I prefer to stay in the background and avoid socializing.",
+      "questionType": "positive",
+      "questionText": "I Pay attention to details..",
       "options": ["Strongly Agree", "Agree", "Neutral", "Disagree", "Strongly Disagree"],
-      "personalityTrait": "Extraversion"
+      "personalityTrait": "Conscientiousness"
     },{
       "id": 404,
       "questionType": "",
@@ -79,8 +79,8 @@
     },
     {
       "id": 7,
-      "questionType": "positive",
-      "questionText": "I am compassionate and kind to others.",
+      "questionType": "negative",
+      "questionText": "I am not interested in other people's problems..",
       "options": ["Strongly Agree", "Agree", "Neutral", "Disagree", "Strongly Disagree"],
       "personalityTrait": "Agreeableness"
     },
@@ -93,9 +93,9 @@
     }, {
       "id": 8,
       "questionType": "negative",
-      "questionText": "I am skeptical and find it difficult to trust others.",
+      "questionText": "I am not interested in abstract ideas.",
       "options": ["Strongly Agree", "Agree", "Neutral", "Disagree", "Strongly Disagree"],
-      "personalityTrait": "Agreeableness"
+      "personalityTrait": "Openness"
     },{
       "id": 404,
       "questionType": "",
@@ -106,7 +106,7 @@
     {
       "id": 9,
       "questionType": "positive",
-      "questionText": "I handle stress well and remain calm under pressure.",
+      "questionText": "I Rarely get irritated.",
       "options": ["Strongly Agree", "Agree", "Neutral", "Disagree", "Strongly Disagree"],
       "personalityTrait": "Neuroticism"
     },{
@@ -118,10 +118,140 @@
     },
     {
       "id": 10,
+      "questionType": "positive",
+      "questionText": "I am skilled in handling social situations.",
+      "options": ["Strongly Agree", "Agree", "Neutral", "Disagree", "Strongly Disagree"],
+      "personalityTrait": "Extraversion"
+    },
+    {
+      "id": 404,
+      "questionType": "",
+      "questionText": "",
+      "options": [],
+      "personalityTrait": ""
+    },
+    {
+      "id": 11,
       "questionType": "negative",
-      "questionText": "I find creative expression to be unnecessary and unimportant.",
+      "questionText": "I Neglect my duties..",
+      "options": ["Strongly Agree", "Agree", "Neutral", "Disagree", "Strongly Disagree"],
+      "personalityTrait": "Conscientiousness"
+    },
+    {
+      "id": 404,
+      "questionType": "",
+      "questionText": "",
+      "options": [],
+      "personalityTrait": ""
+    },{
+      "id": 12,
+      "questionType": "negative",
+      "questionText": "I am indifferent to the feelings of others..",
+      "options": ["Strongly Agree", "Agree", "Neutral", "Disagree", "Strongly Disagree"],
+      "personalityTrait": "Agreeableness"
+    },{
+      "id": 404,
+      "questionType": "",
+      "questionText": "",
+      "options": [],
+      "personalityTrait": ""
+    },
+    {
+      "id": 13,
+      "questionType": "negative",
+      "questionText": "I do not have a good imagination.",
       "options": ["Strongly Agree", "Agree", "Neutral", "Disagree", "Strongly Disagree"],
       "personalityTrait": "Openness"
+    },
+    {
+      "id": 404,
+      "questionType": "",
+      "questionText": "",
+      "options": [],
+      "personalityTrait": ""
+    },{
+      "id": 14,
+      "questionType": "positive",
+      "questionText": "I do things according to a plan..",
+      "options": ["Strongly Agree", "Agree", "Neutral", "Disagree", "Strongly Disagree"],
+      "personalityTrait": "Conscientiousness"
+    },{
+      "id": 404,
+      "questionType": "",
+      "questionText": "",
+      "options": [],
+      "personalityTrait": ""
+    },
+    {
+      "id": 15,
+      "questionType": "positive",
+      "questionText": "I Am relaxed most of the time",
+      "options": ["Strongly Agree", "Agree", "Neutral", "Disagree", "Strongly Disagree"],
+      "personalityTrait": "Neuroticism"
+    },{
+      "id": 404,
+      "questionType": "",
+      "questionText": "",
+      "options": [],
+      "personalityTrait": ""
+    },{
+      "id": 16,
+      "questionType": "positive",
+      "questionText": "I have a rich vocabulary..",
+      "options": ["Strongly Agree", "Agree", "Neutral", "Disagree", "Strongly Disagree"],
+      "personalityTrait": "Openness"
+    },{
+      "id": 404,
+      "questionType": "",
+      "questionText": "",
+      "options": [],
+      "personalityTrait": ""
+    },
+    {
+      "id": 17,
+      "questionType": "positive",
+      "questionText": "I am on good terms with nearly everyone..",
+      "options": ["Strongly Agree", "Agree", "Neutral", "Disagree", "Strongly Disagree"],
+      "personalityTrait": "Agreeableness"
+    },
+    {
+      "id": 404,
+      "questionType": "",
+      "questionText": "",
+      "options": [],
+      "personalityTrait": ""
+    }, {
+      "id": 18,
+      "questionType": "negative",
+      "questionText": "I Am a very private person.",
+      "options": ["Strongly Agree", "Agree", "Neutral", "Disagree", "Strongly Disagree"],
+      "personalityTrait": "Extraversion"
+    },{
+      "id": 404,
+      "questionType": "",
+      "questionText": "",
+      "options": [],
+      "personalityTrait": ""
+    },
+    {
+      "id": 19,
+      "questionType": "negative",
+      "questionText": "I Leave a mess in my room..",
+      "options": ["Strongly Agree", "Agree", "Neutral", "Disagree", "Strongly Disagree"],
+      "personalityTrait": "Conscientiousness"
+    },{
+      "id": 404,
+      "questionType": "",
+      "questionText": "",
+      "options": [],
+      "personalityTrait": ""
+    },
+    {
+      "id": 20,
+      "questionType": "negative",
+      "questionText": "I am easily disturbed..",
+      "options": ["Strongly Agree", "Agree", "Neutral", "Disagree", "Strongly Disagree"],
+      "personalityTrait": "Neuroticism"
     },{
       "id": 404,
       "questionType": "",

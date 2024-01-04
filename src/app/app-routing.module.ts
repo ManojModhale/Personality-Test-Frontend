@@ -10,6 +10,7 @@ import { ProfileComponent } from './ProfilePage/profile.component';
 import { EditcompComponent } from './EditProfile/editcomp/editcomp.component';
 import { QuestionComponent } from './QuestionPage/question.component';
 import { DashboardComponent } from './DasboardPage/dashboard.component';
+import { LogoutComponent } from './LogoutPage/logout.component';
 
 const routes: Routes = [
   {path:'',component:WelcomeComponent},
@@ -21,7 +22,8 @@ const routes: Routes = [
   {path:'question',component:QuestionComponent},
   {path:'dashboard',component:DashboardComponent},
   {path:'profile',component:ProfileComponent},
-  {path:'editprofile',component:EditcompComponent}
+  {path:'editprofile',component:EditcompComponent},
+  {path:'logout',component:LogoutComponent},
 ];
 
 @NgModule({

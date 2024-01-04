@@ -2,17 +2,16 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrl: './home.component.css'
+  selector: 'app-logout',
+  templateUrl: './logout.component.html',
+  styleUrl: './logout.component.css'
 })
-export class HomeComponent {
-
-  constructor(private router: Router) { 
+export class LogoutComponent{
+  constructor(private router:Router){
 
   }
 
-  loggingout(){
+  ngOnInit() {
     console.log("inside logging out");
     sessionStorage.removeItem("LoggedUser");
     sessionStorage.clear();

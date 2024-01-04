@@ -8,7 +8,7 @@ import { Subscription, interval } from 'rxjs';
 })
 export class TimerComponent implements OnInit,OnDestroy{
 
-  timeLeft: number = 300; // Initial time in seconds (5 minutes)
+  timeLeft: number = 150; // Initial time in seconds (5 minutes)
   timerRunning: boolean = false;
   timerSubscription: Subscription | undefined;
 
