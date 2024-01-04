@@ -75,15 +75,16 @@ header {
     -moz-border-radius: 2px;
     border-radius: 2px;
     font-size: .825rem;
-    background: #ffffff;
-    color: #2e323c; 
+    background: hwb(0 100% 0%);
+    color: #424448; 
+    backdrop-filter: blur(8px);
 }
 
 .custom-card {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);/* Add shadow effect */
     padding: 20px; /* Padding for inner content */
     margin-top: 20px; /* Add margin for top spacing */
-    
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color:rgb(255, 255, 255)
 }
 
 
@@ -120,3 +121,13 @@ header {
     font-size: 17px;
     font-family: system-ui;
 }
+.body{
+    background-image: url('/assets/editprofile.jpg'); 
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #f6f6f680;
+    backdrop-filter: blur(5px);
+}
+

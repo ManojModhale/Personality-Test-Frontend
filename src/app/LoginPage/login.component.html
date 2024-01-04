@@ -2,11 +2,13 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 <!-- Font Awesome CSS -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-
-<div class="login-container">
-
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+<div class="body">
+    <div class="container-fluid h-100">
+      <div class="row justify-content-center align-items-center h-100">
+        <div class="col-md-4 login-container">      
+      <!-- <div class="login-container"> -->
     <h2>Login</h2>
-
     <form id="loginForm" (ngSubmit)="onLogin()" [formGroup]="loginForm">
 
         <div class="form-group" [ngClass]="{ 'has-danger': username.invalid && (username.dirty || username.touched) }">
@@ -14,8 +16,9 @@
                 <div class="input-group-prepend">
                     <span class="input-group-text fa-icon"><i class="fas fa-user"></i></span>
                 </div>
-                <input type="text" id="username" class="form-control" formControlName="username" placeholder="Username"
+                 <input type="text" id="username" class="form-control" formControlName="username" placeholder="Username"
                     required>
+                    
             </div>
             <div class="form-control-feedback" *ngIf="username.errors && (username.dirty || username.touched)">
                 <p *ngIf="username.errors.required">Username is required</p>
@@ -52,8 +55,13 @@
     <a routerLink="/forgotpass" class="forgot-password" id="forgotPassword">Forgot Password?</a>
 
     <a routerLink="/newuser" class="new-user" id="newUser">New User? Register Here</a>
-
-</div>
+         
+         </div>
+      </div>
+      </div>
+      
+    </div>
+      
 
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>

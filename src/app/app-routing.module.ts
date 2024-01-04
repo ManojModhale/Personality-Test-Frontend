@@ -11,6 +11,7 @@ import { EditcompComponent } from './EditProfile/editcomp/editcomp.component';
 import { QuestionComponent } from './QuestionPage/question.component';
 import { DashboardComponent } from './DasboardPage/dashboard.component';
 import { LogoutComponent } from './LogoutPage/logout.component';
+import { NotfoundComponent } from './NotfoundPage/notfound.component';
 
 const routes: Routes = [
   {path:'',component:WelcomeComponent},
@@ -24,6 +25,7 @@ const routes: Routes = [
   {path:'profile',component:ProfileComponent},
   {path:'editprofile',component:EditcompComponent},
   {path:'logout',component:LogoutComponent},
+  {path:'**',component:NotfoundComponent}
 ];
 
 @NgModule({

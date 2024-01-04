@@ -151,24 +151,11 @@ header {
     width: 4rem;
     padding: 1rem;
     text-align: center;
-    border-radius: 5rem;
-    font-size: 1rem;
-    margin-right: 1rem;
-    transition: .2s;
-    background: rgb(230, 230, 230);
-    color: #02094b;
-    border: none;
-  }
-  
-  .footer .box-container .box .share a:hover {
-    background: transparent;
-    transform: scale(0.98);
-    border: .1rem solid rgb(180, 178, 178);
-    color: #ffae00;
-  }
-  
-  .footer .credit {
-    padding: 1rem 0 0 0;
+}
+
+footer {
+    background-color: #333;
+    color: white;
     text-align: center;
     font-size: 1rem;
     font-family: 'Nunito', sans-serif;
@@ -263,3 +250,8 @@ header {
         margin-top: 10px;
     }
 }
+
+.trait-section{
+    overflow-y: auto;
+}
+

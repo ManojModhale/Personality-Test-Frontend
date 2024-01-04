@@ -15,7 +15,7 @@ export class ChangePasswordComponent {
   isSubmited:boolean=false;
   generatedOTP:number=0;
 
-  constructor(private http: HttpClient,private router: Router) { 
+  constructor(private http: HttpClient, private router: Router) { 
 
   }
 
@@ -30,7 +30,7 @@ export class ChangePasswordComponent {
     password:new FormControl("",[Validators.required,Validators.minLength(8),Validators.pattern(/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&]).{4,20}$/)]),
     confirmpass:new FormControl("",[Validators.required, this.matchPassword.bind(this)])
   });
-
+  
   matchPassword(control: AbstractControl): { [key: string]: boolean } | null {
     if (!this.forgotPasswordForm || !this.forgotPasswordForm.get('password')) {
       console.error('Form or password control not initialized.');
