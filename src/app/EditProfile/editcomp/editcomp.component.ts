@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 
 interface UserProfile {
   username: string;
@@ -111,14 +112,47 @@ get qualification():any{
 myForm:any;
 
 
-   updateProfile(){
+  //   updateProfile(){
 
-    console.log("FirstName after : "+this.firstname.patchValue);
-    
-    this.myForm=this.updateprof;
-    const username = 'manoj0123'; 
-    if (this.updateprof.valid) 
-    {
+  //     console.log("FirstName after : "+this.firstname.patchValue);
+      
+  //     this.myForm=this.updateprof;
+  //     const username = 'manoj0123'; 
+  //     if (this.updateprof.valid) 
+  //     {
+  //       const updatedProfile = {
+  //         firstname: this.myForm.value.firstname,
+  //         lastname: this.myForm.value.lastname,
+  //         email: this.myForm.value.email,
+  //         mobileno: +this.myForm.value.mobileno,
+  //         designation: this.myForm.value.designation,
+  //         qualification: this.myForm.value.qualification,
+  //       };
+
+  //       this.http.put(`${this.baseUrl}/updateprofile/${username}`, updatedProfile).subscribe(
+  //         (response: any) => {
+  //           // Handle success response
+  //           alert("Profile updated successfully!");
+  //           console.log(response);
+  //           this.router.navigateByUrl('/home');
+  //         },
+  //         (error: any) => {
+  //           // Handle error response
+  //           alert("Error in updation: " + error.message);
+  //           console.error('Error update:', error);
+  //         }
+  //       )
+
+  //   }
+  // }
+
+/*88888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888 */
+  updateProfile() {
+    console.log("FirstName after : " + this.firstname.patchValue);
+  
+    this.myForm = this.updateprof;
+    const username = 'manoj0123';
+    if (this.updateprof.valid) {
       const updatedProfile = {
         firstname: this.myForm.value.firstname,
         lastname: this.myForm.value.lastname,
@@ -127,21 +161,37 @@ myForm:any;
         designation: this.myForm.value.designation,
         qualification: this.myForm.value.qualification,
       };
-
+  
       this.http.put(`${this.baseUrl}/updateprofile/${username}`, updatedProfile).subscribe(
         (response: any) => {
           // Handle success response
-          alert("Profile updated successfully!");
+          this.showUpdateSuccessAlert(); // SweetAlert for successful update
           console.log(response);
           this.router.navigateByUrl('/home');
         },
         (error: any) => {
           // Handle error response
-          alert("Error in updation: " + error.message);
+          this.showUpdateErrorAlert(error.message); // SweetAlert for update error
           console.error('Error update:', error);
         }
-      )
-
-   }
-}
+      );
+    }
+  }
+  
+  private showUpdateSuccessAlert() {
+    Swal.fire({
+      icon: 'success',
+      title: 'Profile Updated!',
+      text: 'Your profile has been successfully updated.',
+    });
+  }
+  
+  private showUpdateErrorAlert(errorMessage: string) {
+    Swal.fire({
+      icon: 'error',
+      title: 'Error in Updation',
+      text: `There was an error during profile update: ${errorMessage}`,
+    });
+  }
+  
 }

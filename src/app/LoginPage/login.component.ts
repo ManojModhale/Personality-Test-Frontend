@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-login',
@@ -47,26 +48,46 @@ export class LoginComponent {
           response => {
             if(response!=null)
             {
-              alert("Login Successfully")
-              console.log('Login successful', response);
-              //this.router.navigate(['/home']);
+              // alert("Login Successfully")
+              // console.log('Login successful', response);
 
               const loggedUser=response;
 
               //console.log("Logged User "+loggedUser);
               sessionStorage.setItem("LoggedUser", JSON.stringify(loggedUser));
+              localStorage.setItem("LoggedUser", JSON.stringify(loggedUser));
 
               //sessionStorage.setItem("loggedUser",loggedUser);
+
+              Swal.fire({
+                icon: 'success',
+                title: 'Login Successful!',
+                text: 'Welcome back!',
+              });
               
               this.router.navigateByUrl("/home");
             }
             else{
-              alert("Wrong Credentials")
-              console.log('Wrong User', response);
+              // alert("Wrong Credentials")
+              // console.log('Wrong User', response);
+
+              Swal.fire({
+                icon: 'error',
+                title: 'Wrong Credentials',
+                text: 'Please check your username and password.',
+              });
             }       
           },
           error => {
-            console.error('Login failed', error);
+
+            // console.error('Login failed', error);
+
+            Swal.fire({
+              icon: 'error',
+              title: 'Login Failed',
+              text: 'Invalid username or password. Please try again.',
+            });
+
           }
         );
     

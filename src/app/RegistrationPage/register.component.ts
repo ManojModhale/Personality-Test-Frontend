@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-register',
@@ -118,14 +119,31 @@ export class RegisterComponent {
       this.http.post(this.baseUrl + "/newuser", registeringData).subscribe(
         (response: any) => {
           // Handle success response
-          alert("Registered successfully!");
+          // alert("Registered successfully!");
           console.log(response);
+
+          Swal.fire({
+            icon: 'success',
+            title: 'Registration Successful!',
+            text: 'Thank you for registering!',
+          });
+
           this.router.navigateByUrl('/login');
+
+          
+          
         },
         (error: any) => {
           // Handle error response
-          alert("Error in registration: " + error.message);
+          // alert("Error in registration: " + error.message);
           console.error('Error Register:', error);
+
+          Swal.fire({
+            icon: 'error',
+            title: 'Error in Registration',
+            text: 'There was an error during registration. Please try again later.',
+          });
+          
         }
       );
       
