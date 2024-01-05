@@ -20,6 +20,7 @@ export class QuestionComponent {
   currentQuestion: any;
   selectedOption: string | null = null;
   private destroy$ = new Subject<void>();
+  security: any;
 
   constructor(private router: Router,private examtimer:ExamtimeService,private sendanswer:SendAnswersService,private questionService: QuestionService){
 
@@ -27,6 +28,19 @@ export class QuestionComponent {
 
   
   ngOnInit(): void {
+
+      let token:any=sessionStorage.getItem("token");
+      if(token)
+      {
+        this.security= JSON.parse(token);
+      if(this.security==false || this.security==null)
+      {
+        this.router.navigateByUrl('/login');
+      }
+      }
+      
+ 
+
     this.questionService.loadQuestions();
     this.questionService.currentQuestion$
       .pipe(takeUntil(this.destroy$))

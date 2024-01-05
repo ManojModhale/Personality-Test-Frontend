@@ -57,6 +57,8 @@ export class LoginComponent {
               sessionStorage.setItem("LoggedUser", JSON.stringify(loggedUser));
               localStorage.setItem("LoggedUser", JSON.stringify(loggedUser));
 
+              const security:boolean=true;
+              sessionStorage.setItem("token",JSON.stringify(security));
               //sessionStorage.setItem("loggedUser",loggedUser);
 
               Swal.fire({

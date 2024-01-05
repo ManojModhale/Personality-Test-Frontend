@@ -11,8 +11,28 @@ import Swal from 'sweetalert2';
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
+  security!: boolean;
+ 
+  
   constructor(private http: HttpClient,private router: Router) { 
+    //this.security=sessionStorage.getItem("token");
+    
 
+  }
+ 
+
+  ngOnInit(): void {
+    let token:any=sessionStorage.getItem("token");
+    if(token)
+    {
+      this.security= JSON.parse(token);
+    if(this.security==false || this.security==null)
+    {
+      this.router.navigateByUrl('/login');
+    }
+    }
+    
+    
   }
   logoutHandler(){
     // console.log("logging out")
@@ -53,3 +73,4 @@ export class HomeComponent {
   }
 
 }
+

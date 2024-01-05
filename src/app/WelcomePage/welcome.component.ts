@@ -19,5 +19,13 @@ export class WelcomeComponent {
 	pauseOnIndicator = false;
 	pauseOnHover = true;
 	pauseOnFocus = true;
+
+  ngOnInit(): void {
+
+    const security:boolean=false;
+    sessionStorage.setItem("token",JSON.stringify(security));
+  }
+
+  
   
 }

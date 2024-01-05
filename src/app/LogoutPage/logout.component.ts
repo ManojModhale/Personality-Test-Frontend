@@ -8,15 +8,29 @@ import Swal from 'sweetalert2';
   styleUrl: './logout.component.css'
 })
 export class LogoutComponent{
+  security: any;
   constructor(private router:Router){
 
   }
 
   ngOnInit() {
+    let token:any=sessionStorage.getItem("token");
+    if(token)
+    {
+      this.security= JSON.parse(token);
+    if(this.security==false || this.security==null)
+    {
+      this.router.navigateByUrl('/login');
+    }
+    
+    }
+
     console.log("inside logging out");
     sessionStorage.removeItem("LoggedUser");
     sessionStorage.clear();
     console.log(sessionStorage.getItem("LoggedUser"));
+
+    sessionStorage.removeItem("token");
 
     Swal.fire({
       title: 'Logout',

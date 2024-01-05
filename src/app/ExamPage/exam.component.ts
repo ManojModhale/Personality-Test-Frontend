@@ -11,9 +11,24 @@ import { ExamtimeService } from '../All-Servicess/examtime.service';
 export class ExamComponent {
 
   isCheckboxChecked = false;
+  security: any;
 
   constructor(private router: Router,private examtimer:ExamtimeService) { 
 
+  }
+
+  ngOnInit(): void {
+    let token:any=sessionStorage.getItem("token");
+    if(token)
+    {
+      this.security= JSON.parse(token);
+    if(this.security==false || this.security==null)
+    {
+      this.router.navigateByUrl('/login');
+    }
+    }
+    
+    
   }
 
   startExam(){

@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 interface UserProfile {
   username: string;
@@ -28,14 +29,30 @@ export class ProfileComponent implements OnInit {
     mobileno: 0,
     qualification: ''
   };
+  security: any;
   
-  constructor(private http: HttpClient) { 
+  
+  constructor(private http: HttpClient,private router:Router) { 
 
   }
 
   ngOnInit(): void {
+    let token:any=sessionStorage.getItem("token");
+    if(token)
+    {
+      this.security= JSON.parse(token);
+    if(this.security==false || this.security==null)
+    {
+      this.router.navigateByUrl('/login');
+    }
+    
+    }
+
     this.loadUserProfile();
+     
   }
+
+
 
   loadUserProfile(){
     let LoggedUser = sessionStorage.getItem("LoggedUser");

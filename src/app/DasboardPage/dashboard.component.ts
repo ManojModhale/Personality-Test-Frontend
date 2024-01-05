@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { GetAllTestsService } from '../All-Servicess/get-all-tests.service';
 import { Test } from './test';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
@@ -13,11 +14,23 @@ export class DashboardComponent {
   username: string = "";
   firstname:string="";
   lastname:string="";
+  security: any;
 
 
-  constructor(private testService: GetAllTestsService) { }
+  constructor(private testService: GetAllTestsService,private router:Router) { }
 
   ngOnInit(): void {
+      let token:any=sessionStorage.getItem("token");
+      if(token)
+      {
+        this.security= JSON.parse(token);
+      if(this.security==false || this.security==null)
+      {
+        this.router.navigateByUrl('/login');
+      }
+      }
+   
+
     let LoggedUser = sessionStorage.getItem("LoggedUser");
     if (LoggedUser) {
     let parsedUser = JSON.parse(LoggedUser);

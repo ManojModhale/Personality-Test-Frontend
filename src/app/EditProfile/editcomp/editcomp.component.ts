@@ -33,14 +33,28 @@ export class EditcompComponent implements OnInit {
     qualification: '',
     designation: ''
   };
+  security: any;
   
   constructor(private http: HttpClient,private router:Router) { 
 
   }
 
   ngOnInit(): void {
+    let token:any=sessionStorage.getItem("token");
+    if(token)
+    {
+      this.security= JSON.parse(token);
+    if(this.security==false || this.security==null)
+    {
+      this.router.navigateByUrl('/login');
+    }
     this.loadUserProfile();
+    }
+    
+    
   }
+
+
 
   loadUserProfile(){
     let LoggedUser = sessionStorage.getItem("LoggedUser");
