@@ -1,37 +1,106 @@
-<<<<<<< HEAD
-# BigFivePersonalityTest
+Big 5 Personality Test
+The Big 5 Personality Test is an online tool that allows users to evaluate their personality based on the Five-Factor Model (FFM). The test measures five key personality traits:
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.3.
+Openness
+Conscientiousness
+Extraversion
+Agreeableness
+Neuroticism
+This repository contains the frontend built with Angular, featuring a user-friendly interface that guides users through the test and displays the results. The test questions and images are fetched from local JSON files, and the app uses various services to manage test timing, fetching questions, and sending user responses to the backend.
 
-## Development server
+Features
+Interactive Test: Answer questions to evaluate each of the five personality traits.
+Real-time Results: After completing the test, users receive a detailed analysis of their personality.
+Responsive Design: Optimized for desktop, tablet, and mobile devices.
+User Authentication: Login, registration, and profile management features.
+Visual Results: Graphical representation of scores for each personality trait.
+Service Integration: Services for counting exam time, fetching questions, submitting answers, and interacting with the backend.
+Technologies Used
+Angular: Framework for building dynamic single-page web applications.
+TypeScript: A statically typed superset of JavaScript.
+HTML/CSS: For structuring and styling the user interface.
+Bootstrap: For responsive layout.
+RxJS: For handling asynchronous operations and data streams.
+Chart.js (Optional): For visualizing results in graphical format.
+Folder Structure
+ruby
+Copy code
+big-5-personality-test/
+│
+├── src/
+│   ├── app/
+│   │   ├── components/           # Reusable UI components like Welcome, HomePage, etc.
+│   │   │   ├── welcome/          # Welcome page component
+│   │   │   ├── homepage/         # Homepage component
+│   │   │   ├── login-page/       # Login page component
+│   │   │   ├── registration-page/# Registration page component
+│   │   │   ├── logout-page/      # Logout page component
+│   │   │   ├── profile/          # User profile component
+│   │   │   ├── dashboard/        # User dashboard component
+│   │   │   ├── exam/             # Test start page component
+│   │   │   └── questionpage/     # Test question page component
+│   │   ├── services/             # Services to handle business logic
+│   │   │   ├── exam-time.service.ts     # Service to track exam time
+│   │   │   ├── get-test.service.ts      # Service to fetch the test
+│   │   │   ├── fetch-question.service.ts # Service to fetch questions one by one
+│   │   │   ├── send-answer.service.ts   # Service to send answers to the backend
+│   │   │   └── all-services.module.ts   # Aggregates all services
+│   │   ├── models/               # TypeScript models (e.g., User, Question)
+│   │   └── app.module.ts         # Root module for the Angular app
+│   ├── assets/                   # Static files like images and JSON files
+│   │   ├── questions.json        # JSON file containing the test questions
+│   │   └── images/               # Folder with images used in the test
+│   ├── environments/             # Environment configurations (e.g., dev, prod)
+│
+├── angular.json                  # Angular CLI configuration
+├── package.json                  # Node.js dependencies and scripts
+└── README.md                     # Project documentation
+Installation
+Prerequisites
+Before getting started, make sure you have the following installed:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Node.js (which includes npm)
+Angular CLI
+Steps
+Clone the repository:
 
-## Code scaffolding
+bash
+Copy code
+git clone https://github.com/your-username/big-5-personality-test.git
+cd big-5-personality-test
+Install the required dependencies:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+bash
+Copy code
+npm install
+Start the development server:
 
-## Build
+bash
+Copy code
+ng serve
+Open your browser and navigate to:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+arduino
+Copy code
+http://localhost:4200
+The application will be live on your local machine.
 
-## Running unit tests
+Folder Description
+src/app/components/: Contains components for different pages like the homepage, login, registration, dashboard, etc.
+src/app/services/: Contains services to handle the logic of exam timing, fetching questions, submitting answers, and communicating with the backend.
+src/assets/: Contains static assets like images and JSON files that hold the test questions.
+src/app/models/: Defines TypeScript interfaces and models used throughout the application (e.g., User, Question).
+How It Works
+Test Questions: The questions for the test are stored in a JSON file located in the assets folder. These are dynamically loaded and displayed in the test pages.
+Services: Services such as exam-time.service.ts, get-test.service.ts, and send-answer.service.ts manage the test's logic, including timing, fetching questions, and sending responses to the backend for analysis.
+User Interface: The components in the components/ folder render the various pages of the app, such as the homepage, test interface, and results dashboard.
+Contributing
+We welcome contributions to this project! If you'd like to contribute:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
-=======
-# Personality-Test-Frontend
-Application enabling users to assess their personality traits through an intuitive interface.
-
-Oversaw a three-member team, successfully
-implementing features such as account
-creation, a 100-question MCQ test, emaildelivered results, and the ability for users to
-retake the test
->>>>>>> 649be292d74ac107488cbf4db9743c7d9f42f347
+Fork the repository.
+Create a new branch for your feature (git checkout -b feature/your-feature).
+Make your changes and test them.
+Commit your changes (git commit -am 'Add new feature').
+Push to the branch (git push origin feature/your-feature).
+Create a pull request.
+Please ensure your code adheres to the existing style and conventions. If you add new features, please include tests where applicable.
