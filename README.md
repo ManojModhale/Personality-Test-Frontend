@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # BigFivePersonalityTest
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.3.
@@ -25,3 +26,12 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+=======
+# Personality-Test-Frontend
+Application enabling users to assess their personality traits through an intuitive interface.
+
+Oversaw a three-member team, successfully
+implementing features such as account
+creation, a 100-question MCQ test, emaildelivered results, and the ability for users to
+retake the test
+>>>>>>> 649be292d74ac107488cbf4db9743c7d9f42f347
