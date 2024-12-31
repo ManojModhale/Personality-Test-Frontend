@@ -86,32 +86,32 @@ big-5-personality-test/
 |
 ├── src/
 |   ├── app/
-|   │   ├── components/           # Reusable UI components like Welcome, HomePage, etc.
-|   │   │   ├── welcome/          # Welcome page component
-|   │   │   ├── homepage/         # Homepage component
-|   │   │   ├── login-page/       # Login page component
-|   │   │   ├── registration-page/# Registration page component
-|   │   │   ├── logout-page/      # Logout page component
-|   │   │   ├── profile/          # User profile component
-|   │   │   ├── dashboard/        # User dashboard component
-|   │   │   ├── exam/             # Test start page component
-|   │   │   └── questionpage/     # Test question page component
-|   │   ├── services/             # Services to handle business logic
-|   │   │   ├── exam-time.service.ts     # Service to track exam time
-|   │   │   ├── get-test.service.ts      # Service to fetch the test
-|   │   │   ├── fetch-question.service.ts # Service to fetch questions one by one
-|   │   │   ├── send-answer.service.ts   # Service to send answers to the backend
-|   │   │   └── all-services.module.ts   # Aggregates all services
-|   │   ├── models/               # TypeScript models (e.g., User, Question)
-|   │   └── app.module.ts         # Root module for the Angular app
-|   ├── assets/                   # Static files like images and JSON files
-|   │   ├── questions.json        # JSON file containing the test questions
-|   │   └── images/               # Folder with images used in the test
-|   ├── environments/             # Environment configurations (e.g., dev, prod)
+|   │   ├── components/                    # Reusable UI components like Welcome, HomePage, etc.
+|   │   │   ├── welcome/                   # Welcome page component
+|   │   │   ├── homepage/                  # Homepage component
+|   │   │   ├── login-page/                # Login page component
+|   │   │   ├── registration-page/         # Registration page component
+|   │   │   ├── logout-page/               # Logout page component
+|   │   │   ├── profile/                   # User profile component
+|   │   │   ├── dashboard/                 # User dashboard component
+|   │   │   ├── exam/                      # Test start page component
+|   │   │   └── questionpage/              # Test question page component
+|   │   ├── services/                      # Services to handle business logic
+|   │   │   ├── exam-time.service.ts       # Service to track exam time
+|   │   │   ├── get-test.service.ts        # Service to fetch the test
+|   │   │   ├── fetch-question.service.ts  # Service to fetch questions one by one
+|   │   │   ├── send-answer.service.ts     # Service to send answers to the backend
+|   │   │   └── all-services.module.ts     # Aggregates all services
+|   │   ├── models/                        # TypeScript models (e.g., User, Question)
+|   │   └── app.module.ts                  # Root module for the Angular app
+|   ├── assets/                            # Static files like images and JSON files
+|   │   ├── questions.json                 # JSON file containing the test questions
+|   │   └── images/                        # Folder with images used in the test
+|   ├── environments/                      # Environment configurations (e.g., dev, prod)
 |
-├── angular.json                  # Angular CLI configuration
-├── package.json                  # Node.js dependencies and scripts
-└── README.md                     # Project documentation
+├── angular.json                           # Angular CLI configuration
+├── package.json                           # Node.js dependencies and scripts
+└── README.md                              # Project documentation
 ```
 
 ---
