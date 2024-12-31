@@ -8,23 +8,125 @@ Agreeableness
 Neuroticism
 This repository contains the frontend built with Angular, featuring a user-friendly interface that guides users through the test and displays the results. The test questions and images are fetched from local JSON files, and the app uses various services to manage test timing, fetching questions, and sending user responses to the backend.
 
-Features
-Interactive Test: Answer questions to evaluate each of the five personality traits.
-Real-time Results: After completing the test, users receive a detailed analysis of their personality.
-Responsive Design: Optimized for desktop, tablet, and mobile devices.
-User Authentication: Login, registration, and profile management features.
-Visual Results: Graphical representation of scores for each personality trait.
-Service Integration: Services for counting exam time, fetching questions, submitting answers, and interacting with the backend.
-Technologies Used
-Angular: Framework for building dynamic single-page web applications.
-TypeScript: A statically typed superset of JavaScript.
-HTML/CSS: For structuring and styling the user interface.
-Bootstrap: For responsive layout.
-RxJS: For handling asynchronous operations and data streams.
-Chart.js (Optional): For visualizing results in graphical format.
-Folder Structure
-ruby
-Copy code
+
+
+Folder Description
+src/app/components/: Contains components for different pages like the homepage, login, registration, dashboard, etc.
+src/app/services/: Contains services to handle the logic of exam timing, fetching questions, submitting answers, and communicating with the backend.
+src/assets/: Contains static assets like images and JSON files that hold the test questions.
+src/app/models/: Defines TypeScript interfaces and models used throughout the application (e.g., User, Question).
+How It Works
+Test Questions: The questions for the test are stored in a JSON file located in the assets folder. These are dynamically loaded and displayed in the test pages.
+Services: Services such as exam-time.service.ts, get-test.service.ts, and send-answer.service.ts manage the test's logic, including timing, fetching questions, and sending responses to the backend for analysis.
+User Interface: The components in the components/ folder render the various pages of the app, such as the homepage, test interface, and results dashboard.
+Contributing
+We welcome contributions to this project! If you'd like to contribute:
+
+Fork the repository.
+Create a new branch for your feature (git checkout -b feature/your-feature).
+Make your changes and test them.
+Commit your changes (git commit -am 'Add new feature').
+Push to the branch (git push origin feature/your-feature).
+Create a pull request.
+Please ensure your code adheres to the existing style and conventions. If you add new features, please include tests where applicable.
+
+
+
+
+
+
+
+
+# Big 5 Personality Test Frontend
+
+## Overview
+
+**Big 5 Personality Test** The Big 5 Personality Test is an online tool that allows users to evaluate their personality based on the Five-Factor Model (FFM). The test measures five key personality traits:
+
+- Openness: Appreciation for art, emotion, adventure, and unusual ideas.
+- Conscientiousness: Tendency to be organized, dependable, and disciplined.
+- Extraversion: Tendency to be sociable, outgoing, and energetic.
+- Agreeableness: Tendency to be compassionate, cooperative, and friendly.
+- Neuroticism: Tendency to experience emotional instability, anxiety, and mood swings.
+
+  This repository contains the frontend built with Angular, featuring a user-friendly interface that guides users through the test and displays the results. The test questions and images are fetched from local JSON files, and the app uses various services to manage test timing, fetching questions, and sending user responses to the backend.
+  This project consists of an Angular frontend that communicates with a Spring Boot backend running on port 8182 to fetch test questions, send user answers, and retrieve results.
+  
+---
+
+## Features
+
+- **Interactive Test**: A series of questions for evaluating personality traits.
+- **Real-Time Results**: Instant results showing personality scores for each trait.
+- **Responsive Layout**: Designed to work across devices (desktop, tablet, and mobile).
+- **User Authentication**: Login, registration, and profile management.
+- **Service Integration**: Services to handle timing, question fetching, answer submission, and backend communication.
+- **Questionnaire**: A set of questions designed to evaluate the five key personality traits.
+- **Results Visualization**: Graphical representation of the user’s personality scores for each trait.
+
+---
+
+## Technologies Used
+
+- **Angular**: For building the frontend user interface.
+- **TypeScript**: For writing maintainable and scalable Angular code.
+- **Bootstrap**: For responsive and mobile-friendly design.
+- **RxJS**: For managing asynchronous operations.
+- **Spring Boot**: Backend server running on port `8182`.
+
+---
+
+
+## Installation
+
+### Prerequisites
+
+Before starting, ensure you have the following installed:
+
+- [Node.js](https://nodejs.org/) (which includes npm)
+- [Angular CLI](https://angular.io/cli)
+
+Additionally, the backend (Spring Boot) should be running on port `8182`. Ensure that the backend is up and running before interacting with the frontend.
+
+### Steps to Run the Angular Frontend
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/your-username/big-5-personality-test.git
+   cd big-5-personality-test
+
+   ```
+
+2. Install the dependencies:
+
+   ```bash
+   npm install
+
+   ```
+
+3. Start the development server:
+
+   ```bash
+   ng serve
+
+   ```
+
+4. Open your browser and navigate to:
+
+   ```bash
+  [ npm install](http://localhost:4200)
+
+   ```
+
+  The Angular frontend will be running and communicating with the backend on port 8182.
+
+---
+
+
+## Folder Structure
+
+```
 big-5-personality-test/
 │
 ├── src/
@@ -55,52 +157,58 @@ big-5-personality-test/
 ├── angular.json                  # Angular CLI configuration
 ├── package.json                  # Node.js dependencies and scripts
 └── README.md                     # Project documentation
-Installation
-Prerequisites
-Before getting started, make sure you have the following installed:
 
-Node.js (which includes npm)
-Angular CLI
-Steps
-Clone the repository:
 
-bash
-Copy code
-git clone https://github.com/your-username/big-5-personality-test.git
-cd big-5-personality-test
-Install the required dependencies:
 
-bash
-Copy code
-npm install
-Start the development server:
+```
 
-bash
-Copy code
-ng serve
-Open your browser and navigate to:
+---
 
-arduino
-Copy code
-http://localhost:4200
-The application will be live on your local machine.
+## Backend Communication
+The Angular frontend communicates with the Spring Boot backend running on port 8182 using Angular's HttpClientModule. All HTTP requests (GET, POST) to fetch test data, send answers, and receive results are made to the backend URL http://localhost:8182.
 
-Folder Description
-src/app/components/: Contains components for different pages like the homepage, login, registration, dashboard, etc.
-src/app/services/: Contains services to handle the logic of exam timing, fetching questions, submitting answers, and communicating with the backend.
-src/assets/: Contains static assets like images and JSON files that hold the test questions.
-src/app/models/: Defines TypeScript interfaces and models used throughout the application (e.g., User, Question).
-How It Works
-Test Questions: The questions for the test are stored in a JSON file located in the assets folder. These are dynamically loaded and displayed in the test pages.
-Services: Services such as exam-time.service.ts, get-test.service.ts, and send-answer.service.ts manage the test's logic, including timing, fetching questions, and sending responses to the backend for analysis.
-User Interface: The components in the components/ folder render the various pages of the app, such as the homepage, test interface, and results dashboard.
-Contributing
-We welcome contributions to this project! If you'd like to contribute:
+**Example API Endpoints**
+- GET /api/test: Fetches the test data (questions) from the Spring Boot backend.
+- POST /api/answers: Sends the user’s answers to the backend for processing and storing.
+**CORS Configuration (Backend)**
+Since the frontend is served on a different port (e.g., port 4200 for development) and the backend is running on port 8182, CORS (Cross-Origin Resource Sharing) must be enabled in the Spring Boot application.
 
-Fork the repository.
-Create a new branch for your feature (git checkout -b feature/your-feature).
-Make your changes and test them.
-Commit your changes (git commit -am 'Add new feature').
-Push to the branch (git push origin feature/your-feature).
-Create a pull request.
-Please ensure your code adheres to the existing style and conventions. If you add new features, please include tests where applicable.
+---
+
+## Folder Description
+
+- src/app/components/: Contains components for different pages like the homepage, login, registration, dashboard, etc.
+- src/app/services/: Contains services to handle the logic of exam timing, fetching questions, submitting answers, and communicating with the backend.
+- src/assets/: Contains static assets like images and JSON files that hold the test questions.
+- src/app/models/: Defines TypeScript interfaces and models used throughout the application (e.g., User, Question).
+
+---
+
+## Future Enhancements
+
+- Implement a recommendation system for book suggestions.
+- Add payment gateway integration for online transactions.
+- Implement an admin panel for managing books and users.
+- Include pagination for better browsing experience.
+
+
+---
+
+## How It Works
+
+- Test Questions: The questions for the test are stored in a JSON file located in the assets folder. These are dynamically loaded and displayed in the test pages.
+- Services: Services such as exam-time.service.ts, get-test.service.ts, and send-answer.service.ts manage the test's logic, including timing, fetching questions, and sending responses to the backend for analysis.
+- User Interface: The components in the components/ folder render the various pages of the app, such as the homepage, test interface, and results dashboard.
+
+---
+
+## Contact
+
+Maintainer: Manoj Modhale
+
+- GitHub: [https://github.com/ManojModhale](https://github.com/ManojModhale)
+- Email: [manojmodhale2001@gmail.com](mailto\:manojmodhale2001@gmail.com)
+
+---
+
+
