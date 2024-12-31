@@ -76,7 +76,7 @@ Additionally, the backend (Spring Boot) should be running on port `8182`. Ensure
 4. Open your browser and navigate to:
 
    ```bash
-  [ npm install](http://localhost:4200)
+   http://localhost:4200
 
    ```
 
@@ -119,8 +119,6 @@ big-5-personality-test/
 ├── package.json                  # Node.js dependencies and scripts
 └── README.md                     # Project documentation
 
-
-
 ```
 
 ---
@@ -151,7 +149,6 @@ Since the frontend is served on a different port (e.g., port 4200 for developmen
 - Add payment gateway integration for online transactions.
 - Implement an admin panel for managing books and users.
 - Include pagination for better browsing experience.
-
 
 ---
 
